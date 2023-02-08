@@ -1,5 +1,4 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { useEffect, useState } from "react";
 import Header from "./layout/Header";
 import { Route, Routes } from "react-router-dom";
 import RecommendFont from "./components/RecommendFont";
@@ -12,7 +11,7 @@ import axios from "axios";
 // style
 import "./assets/style/style.scss";
 import Footer from "./layout/Footer";
-import { useEffect, useState } from "react";
+import "./assets/fonts/font.scss";
 
 function App() {
   const [recommendData, setRecommendData] = useState([]);
