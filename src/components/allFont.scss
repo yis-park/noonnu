@@ -1,0 +1,40 @@
+@import "../assets/style/variable.scss";
+.wrapper {
+  padding: $padding;
+  .txt {
+    display: flex;
+    padding: $padding;
+    h3 {
+      font-size: $h3Size;
+      color: $h3Color;
+      font-weight: $h3Weight;
+      line-height: $h3LineHigth;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+  .input {
+    padding: $padding;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2vw;
+    padding: $padding;
+    .flex {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #000;
+      h4 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 14px;
+      }
+      span {
+        font-size: 30px;
+      }
+    }
+  }
+}

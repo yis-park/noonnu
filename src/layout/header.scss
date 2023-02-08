@@ -1,0 +1,17 @@
+@import "../assets/style/variable.scss";
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 2px solid #e5e7eb;
+  // width: 100%;
+  height: 56px;
+  transition: 0.4s;
+  background-color: #fff;
+
+  &.on {
+    background-color: #fff;
+    border-bottom: none;
+  }
+}

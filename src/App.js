@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./layout/Header";
+import { Route, Routes } from "react-router-dom";
+import RecommendFont from "./components/RecommendFont";
+import AllFont from "./components/AllFont";
+import WhatFont from "./components/WhatFont";
+import NotFoundPage from "./components/NotFoundPage";
+import Join from "./components/Join";
+import axios from "axios";
+
+// style
+import "./assets/style/style.scss";
+import Footer from "./layout/Footer";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [recommendData, setRecommendData] = useState([]);
+  const [allData, setAllData] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const listDataList = await axios.get("./DB/listData.json");
+      setRecommendData(listDataList.data.recommendData);
+      setAllData(listDataList.data.allData);
+    };
+    getData();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route
+          path="/"
+          element={<RecommendFont recommendData={recommendData} />}
+        />
+        <Route path="/allfont" element={<AllFont allData={allData} />} />
+        <Route path="/whatfont" element={<WhatFont />} />
+        <Route path="*" element={<NotFoundPage />} />
+
+        <Route path="/join" element={<Join />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
