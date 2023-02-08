@@ -19,10 +19,23 @@ function Navigation(props) {
         <li>
           <Link to="*">아무 디자인</Link>
         </li>
-      </ul>
-      <ul className="registry">
+
         <li>
           <input type="text" placeholder="전체 폰트 검색" />
+          <svg
+            class="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
+            width="20"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#2c3e50"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
         </li>
         <li>
           <svg
@@ -41,7 +54,6 @@ function Navigation(props) {
             ></path>
           </svg>
         </li>
-
         <li>
           <img
             class="h-8 w-8 rounded-full object-cover border border-zinc-200 dark:border-zinc-600 bg-gray-50 p-0.5"

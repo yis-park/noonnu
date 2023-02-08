@@ -23,6 +23,8 @@ function AllFont({ allData }) {
 
             <div className="bold">
               <p>{item.bold}</p>
+              <p style={{ color: ` ${item.fontColor}` }}>{item.fontColor}</p>
+              <p style={{ fontFamily: ` ${item.fontFamily}` }}>{item.des}</p>
             </div>
           </div>
         ))}
