@@ -1,49 +1,78 @@
 @import "../assets/style/variable.scss";
 
-// 부대찌개
-@font-face {
-  font-family: "TTTtangsbudaejjigaeB";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/TTTtangsbudaejjigaeB.woff2")
-    format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
 .wrapper {
-  padding: $padding;
+  *,
+  :after,
+  :before {
+    border: 0 solid #e5e7eb;
+    box-sizing: border-box;
+  }
   .txt {
     display: flex;
-    padding: $padding;
+
+    align-items: center;
+    margin-top: 1.75rem;
+
     h3 {
       font-size: $h3Size;
       color: $h3Color;
       font-weight: $h3Weight;
-      line-height: $h3LineHigth;
     }
     p {
-      font-size: 16px;
+      font-size: 14px;
+      color: #6b7280;
+      margin-left: 1.5rem;
     }
   }
   .input {
-    padding: $padding;
+    display: flex;
+    padding: 10px;
   }
+
   .grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 2vw;
-    padding: $padding;
+    padding: 0 2rem;
+    margin: 0 auto;
     .flex {
       display: flex;
       flex-direction: column;
-      border: 1px solid #000;
+      border: 1px solid $colorLine;
       h4 {
-        font-size: 20px;
+        font-size: 24px;
+        padding: 15px;
+        padding-bottom: 0;
+        height: 50px;
       }
       p {
-        font-size: 14px;
+        padding-left: 15px;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        // height: 30px;
+      }
+      .line {
+        border-top: 1px solid $colorLine;
+        margin: 16px 0;
+      }
+      textarea {
+        border: none;
+        height: 144px;
+        padding: 0 15px;
+        resize: none;
+        &:focus {
+          border-style: none;
+        }
       }
       span {
         font-size: 30px;
+        padding: 10px;
+      }
+      .bold {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
       }
     }
   }

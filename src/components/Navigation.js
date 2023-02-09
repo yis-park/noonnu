@@ -19,7 +19,8 @@ function Navigation(props) {
         <li>
           <Link to="*">아무 디자인</Link>
         </li>
-
+      </ul>
+      <ul className="input">
         <li>
           <input type="text" placeholder="전체 폰트 검색" />
           <svg
@@ -38,13 +39,14 @@ function Navigation(props) {
           </svg>
         </li>
         <li>
+          d s
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="36"
             height="36"
             viewBox="0 0 36 36"
             fill="none"
-            class="h-6 w-6 inline-block dark:hidden"
+            class="dark"
           >
             <path
               fill-rule="evenodd"
@@ -54,16 +56,17 @@ function Navigation(props) {
             ></path>
           </svg>
         </li>
+      </ul>
+      <ul className="icon">
         <li>
-          <img
-            class="h-8 w-8 rounded-full object-cover border border-zinc-200 dark:border-zinc-600 bg-gray-50 p-0.5"
-            src={noonMore}
-          />
+          <button>
+            <img class="iconImg" src={noonMore} />
+          </button>
           <ul className="subMenu">
-            <li>
+            <li className="subLi">
               <Link to=""> 공지사항</Link>
             </li>
-            <li>
+            <li className="subLi">
               <Link to="/join"> 회원가입</Link>
             </li>
           </ul>

@@ -12,6 +12,7 @@ import axios from "axios";
 import "./assets/style/style.scss";
 import Footer from "./layout/Footer";
 import "./assets/fonts/font.scss";
+// import GlobalStyle from "./assets/fonts/Global";
 
 function App() {
   const [recommendData, setRecommendData] = useState([]);
@@ -27,6 +28,7 @@ function App() {
   }, []);
   return (
     <>
+      {/* <GlobalStyle /> */}
       <Header />
       <Routes>
         <Route

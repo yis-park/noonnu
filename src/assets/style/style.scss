@@ -5,5 +5,12 @@
 @import "variable";
 
 .wrapper {
-  background-color: pink;
+  padding-left: $padding;
+  padding-right: $padding;
+}
+input {
+  border-radius: 20px;
+  border: $border;
+  font-size: 14px;
+  padding: 0.5rem 0.75rem;
 }
