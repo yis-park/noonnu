@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/noonnu/static/css/main.781f4b43.css",
-    "main.js": "/noonnu/static/js/main.97bfd99f.js",
+    "main.css": "/noonnu/static/css/main.1efd9f08.css",
+    "main.js": "/noonnu/static/js/main.8febc078.js",
     "static/media/noon-more.jpg": "/noonnu/static/media/noon-more.426fb05c6d040fcd7717.jpg",
     "index.html": "/noonnu/index.html",
-    "main.781f4b43.css.map": "/noonnu/static/css/main.781f4b43.css.map",
-    "main.97bfd99f.js.map": "/noonnu/static/js/main.97bfd99f.js.map"
+    "main.1efd9f08.css.map": "/noonnu/static/css/main.1efd9f08.css.map",
+    "main.8febc078.js.map": "/noonnu/static/js/main.8febc078.js.map"
   },
   "entrypoints": [
-    "static/css/main.781f4b43.css",
-    "static/js/main.97bfd99f.js"
+    "static/css/main.1efd9f08.css",
+    "static/js/main.8febc078.js"
   ]
 }
