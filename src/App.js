@@ -31,7 +31,7 @@ function App() {
       {/* <GlobalStyle /> */}
       <Header />
       <Routes>
-        <Route path="/" element={<RecommendFont allData={allData} />} />
+        <Route index path="/" element={<RecommendFont allData={allData} />} />
 
         <Route path="/allFont" element={<AllFont allData={allData} />}>
           <Route path=":name" element={<FontDetail allData={allData} />} />

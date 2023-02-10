@@ -7,6 +7,7 @@ import { useState } from "react";
 
 function Navigation(props) {
   const [subMenu, setSubMenu] = useState(false);
+
   return (
     <nav className="navigation">
       <ul className="globalNav">

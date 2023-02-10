@@ -1,10 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./allFont.scss";
 import Modal from "./Modal";
 
 function AllFont({ allData, item }) {
-  const [modal, setModal] = useState(false);
+  const userMenu = useRef();
+  const [isOpen, setIsOpen] = useState(false);
+
+  // 적는대로 값 나타나기
+  const [textValue, setTextvalue] = useState();
+  const handleSetValue = (e) => {
+    setTextvalue(e.target.value);
+  };
+
+  const handleSetTab = (e) => {
+    if (e.keyCode === 9) {
+      e.preventDefault();
+      let val = e.target.value;
+      let start = e.target.selectionStart;
+      let end = e.target.selectionEnd;
+      e.target.value = val.substring(0, start) + "\t" + val.substring(end);
+      e.target.selectionStart = e.target.selectionEnd = start + 1;
+      handleSetValue(e);
+      return false; //  prevent focus
+    }
+  };
+
+  // const modalClose = ({ target }) => {
+  //   if (isOpen && !userMenu.current.contains(target)) setIsOpen(false);
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener("click", modalClose);
+  //   return () => {
+  //     window.removeEventListener("click", modalClose);
+  //   };
+  // });
+
   const nav = useNavigate();
   const onGo = () => {
     nav(`/allFont/${item.id}`);
@@ -18,7 +50,7 @@ function AllFont({ allData, item }) {
 
       <div className="input fixed after">
         <div className="search">
-          <input type="text" placeholder="모든 폰트 내에서 검색" />
+          <input type="search" placeholder="모든 폰트 내에서 검색" />
           <svg
             class="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
             width="20"
@@ -36,7 +68,14 @@ function AllFont({ allData, item }) {
         </div>
 
         <div className="try">
-          <input type="text" placeholder="예시 문구를 적어보세요" />
+          <input
+            placeholder="예시 문구를 적어보세요"
+            value={textValue}
+            onchange={(e) => handleSetValue(e)}
+            onKeyDown={(e) => handleSetTab(e)}
+            type="text"
+          />
+          <p>{textValue}</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
@@ -85,19 +124,22 @@ function AllFont({ allData, item }) {
               </div>
             </Link>
             <textarea
-              name="editor"
               style={{ fontFamily: ` ${item.fontFamily}`, fontSize: "30px" }}
               placeholder={`${item.des}`}
-            ></textarea>
+            >
+              {textValue}
+            </textarea>
 
             <div className="bold">
               <p>{item.bold}</p>
               <button
+                ref={userMenu}
                 onClick={() => {
-                  setModal(!modal);
+                  setIsOpen(!isOpen);
                 }}
               >
-                {modal ? <Modal /> : null}
+                {isOpen ? <Modal /> : null}
+                {/* {modal && <Modal onClose={onClose} />} */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-6 w-6 stroke-current fill-current pointer-events-none"
