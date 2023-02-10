@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 
 import "./navigation.scss";
 import noonMore from "../assets/images/noon-more.jpg";
+import logImg from "../assets/images/login.png";
+import { useState } from "react";
 
 function Navigation(props) {
+  const [subMenu, setSubMenu] = useState(false);
   return (
     <nav className="navigation">
       <ul className="globalNav">
@@ -22,7 +25,7 @@ function Navigation(props) {
       </ul>
       <ul className="input">
         <li>
-          <input type="text" placeholder="전체 폰트 검색" />
+          <input type="text" name="message" placeholder="전체 폰트 검색" />
           <svg
             class="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
             width="20"
@@ -59,17 +62,27 @@ function Navigation(props) {
       </ul>
       <ul className="icon">
         <li>
-          <button>
-            <img class="iconImg" src={noonMore} />
+          <button
+            onClick={() => {
+              setSubMenu(!subMenu);
+            }}
+          >
+            <img class="noonMore" src={noonMore} />
+            {subMenu ? (
+              <ul className="subMenu">
+                <li className="subLi">
+                  <Link to=""> 공지사항</Link>
+                </li>
+                <li className="subLi">
+                  <Link to=""> 로그인</Link>
+                </li>
+                <li className="subFlex">
+                  <img className="logImg" src={logImg} />
+                  <Link to="/join"> 회원가입</Link>
+                </li>
+              </ul>
+            ) : null}
           </button>
-          <ul className="subMenu">
-            <li className="subLi">
-              <Link to=""> 공지사항</Link>
-            </li>
-            <li className="subLi">
-              <Link to="/join"> 회원가입</Link>
-            </li>
-          </ul>
         </li>
       </ul>
     </nav>

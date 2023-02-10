@@ -12,16 +12,16 @@ import axios from "axios";
 import "./assets/style/style.scss";
 import Footer from "./layout/Footer";
 import "./assets/fonts/font.scss";
+import FontMap from "./components/FontMap";
+import FontDetail from "./components/FontDetail";
 // import GlobalStyle from "./assets/fonts/Global";
 
 function App() {
-  const [recommendData, setRecommendData] = useState([]);
   const [allData, setAllData] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       const listDataList = await axios.get("./DB/listData.json");
-      setRecommendData(listDataList.data.recommendData);
       setAllData(listDataList.data.allData);
     };
     getData();
@@ -31,17 +31,17 @@ function App() {
       {/* <GlobalStyle /> */}
       <Header />
       <Routes>
-        <Route path="/" element={<AllFont allData={allData} />} />
-        <Route
-          path="/recommendData"
-          element={<RecommendFont recommendData={recommendData} />}
-        />
+        <Route path="/" element={<RecommendFont allData={allData} />} />
 
+        <Route path="/allFont" element={<AllFont allData={allData} />}>
+          <Route path=":name" element={<FontDetail allData={allData} />} />
+        </Route>
         <Route path="/whatfont" element={<WhatFont />} />
         <Route path="*" element={<NotFoundPage />} />
 
         <Route path="/join" element={<Join />} />
       </Routes>
+      {/* <FontMap allData={allData} /> */}
       <Footer />
     </>
   );

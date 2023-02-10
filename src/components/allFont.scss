@@ -1,17 +1,18 @@
 @import "../assets/style/variable.scss";
 
 .wrapper {
-  *,
-  :after,
-  :before {
-    border: 0 solid #e5e7eb;
-    box-sizing: border-box;
-  }
+  // *,
+  // :after,
+  // :before {
+  //   border: 0 solid #e5e7eb;
+  //   box-sizing: border-box;
+  // }
+
   .txt {
     display: flex;
-
     align-items: center;
-    margin-top: 1.75rem;
+    margin-top: 2rem;
+    margin-bottom: 1.4rem;
 
     h3 {
       font-size: $h3Size;
@@ -19,7 +20,7 @@
       font-weight: $h3Weight;
     }
     p {
-      font-size: 14px;
+      font-size: 16px;
       color: #6b7280;
       margin-left: 1.5rem;
     }
@@ -33,33 +34,54 @@
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 2vw;
-    padding: 0 2rem;
     margin: 0 auto;
+
     .flex {
       display: flex;
       flex-direction: column;
       border: 1px solid $colorLine;
-      h4 {
-        font-size: 24px;
-        padding: 15px;
-        padding-bottom: 0;
-        height: 50px;
+      transition: 0.3s;
+      &:hover {
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+          rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        &:hover .click {
+          background-color: $Click;
+        }
+        &:hover svg {
+          stroke: #6b7280;
+        }
       }
-      p {
-        padding-left: 15px;
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-        height: 20px;
-      }
-      .line {
-        border-top: 1px solid $colorLine;
-        margin: 16px 0;
+      .click {
+        border: none;
+        background-color: inherit;
+        .hover {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-right: 10px;
+        }
+        h4 {
+          font-size: 24px;
+          padding: 15px;
+          padding-bottom: 0;
+          height: 50px;
+        }
+        p {
+          padding-left: 15px;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          height: 20px;
+        }
+        .line {
+          border-top: 1px solid $colorLine;
+          margin: 16px 0 0;
+        }
       }
       textarea {
         border: none;
         height: 144px;
         padding: 0 10px;
-        margin: 0 10px;
+        margin: 16px 10px 0;
         resize: none;
         outline-color: #fff;
 
@@ -76,6 +98,8 @@
         justify-content: space-between;
         align-items: center;
         height: 40px;
+        padding: 0 15px;
+        font-size: 14px;
       }
     }
   }
