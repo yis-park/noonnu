@@ -58,10 +58,12 @@
       textarea {
         border: none;
         height: 144px;
-        padding: 0 15px;
+        padding: 0 10px;
         resize: none;
-        &:focus {
-          border-style: none;
+        outline: 1px solid $colorLine;
+
+        &::placeholder {
+          color: #000;
         }
       }
       span {

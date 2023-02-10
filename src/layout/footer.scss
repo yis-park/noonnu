@@ -1,10 +1,54 @@
 @import "../assets/style/variable.scss";
 
 footer {
+  padding-left: $padding;
+  padding-right: $padding;
   color: #d1d5d8;
   height: 340px;
   background-color: rgba(0, 0, 0, 0.8);
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 2.5rem 2rem;
+  margin: auto;
   margin-top: 4rem;
+  line-height: 1.75rem;
+  a {
+    text-decoration: underline;
+  }
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    width: 80%;
+    margin: 0 auto;
+    .left {
+      p {
+        padding-top: 20px;
+      }
+      span {
+        display: block;
+        display: flex;
+        padding-top: 20px;
+        font-size: 14px;
+        a {
+          padding: 0 6px;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .right {
+      p {
+        display: flex;
+      }
+      a {
+        padding: 0 6px;
+        text-decoration: none;
+        &:hover {
+          color: #ffd951;
+        }
+      }
+    }
+  }
 }
