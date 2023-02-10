@@ -10,7 +10,8 @@
       "writer": "길형진 (orioncactus)",
       "des": "세상에 이런 폰트가 나오다니 천재인듯",
       "bold": "9가지 굵기",
-      "fontFamily": "Pretendard-Regular"
+      "fontFamily": "Pretendard-Regular",
+      "good": "5"
     },
     {
       "id": "2",
@@ -26,7 +27,8 @@
       "writer": "마포구",
       "des": "산들바람 흩날리는 마포꽃섬",
       "bold": "",
-      "fontFamily": "MapoFlowerIsland"
+      "fontFamily": "MapoFlowerIsland",
+      "good": "5"
     },
     {
       "id": "4",
@@ -50,7 +52,8 @@
       "writer": "교보문고",
       "des": "내년엔 책을 좀 읽자",
       "bold": "",
-      "fontFamily": "KyoboHandwriting2021sjy"
+      "fontFamily": "KyoboHandwriting2021sjy",
+      "good": "5"
     },
     {
       "id": "7",
@@ -74,7 +77,8 @@
       "writer": "야놀자",
       "des": "가끔 가벼운 여행은 활력이 되지",
       "bold": "",
-      "fontFamily": "YanoljaYacheR"
+      "fontFamily": "YanoljaYacheR",
+      "good": "5"
     },
     {
       "id": "10",
@@ -90,7 +94,8 @@
       "writer": "농심",
       "des": "보글보글 맛있는 라면",
       "bold": "",
-      "fontFamily": "Ansungtangmyun-ESG"
+      "fontFamily": "Ansungtangmyun-ESG",
+      "good": "5"
     },
     {
       "id": "12",
@@ -98,7 +103,8 @@
       "writer": "(주)케이티",
       "des": "컴퓨터 오래보면 눈 아프다",
       "bold": "9가지 굵기",
-      "fontFamily": "Ycomputer-Regular"
+      "fontFamily": "Ycomputer-Regular",
+      "good": "5"
     }
   ]
 }
