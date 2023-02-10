@@ -31,11 +31,12 @@ function App() {
       {/* <GlobalStyle /> */}
       <Header />
       <Routes>
+        <Route path="/" element={<AllFont allData={allData} />} />
         <Route
-          path="/"
+          path="/recommendData"
           element={<RecommendFont recommendData={recommendData} />}
         />
-        <Route path="/allfont" element={<AllFont allData={allData} />} />
+
         <Route path="/whatfont" element={<WhatFont />} />
         <Route path="*" element={<NotFoundPage />} />
 
