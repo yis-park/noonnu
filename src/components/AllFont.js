@@ -8,9 +8,11 @@ function AllFont({ allData, item }) {
   const [isOpen, setIsOpen] = useState(false);
 
   // 적는대로 값 나타나기
-  const [textValue, setTextvalue] = useState();
+  const [textValue, setTextvalue] = useState("");
+
   const handleSetValue = (e) => {
-    setTextvalue(e.target.value);
+    const { value } = e.target;
+    setTextvalue(value);
   };
 
   const handleSetTab = (e) => {
@@ -126,6 +128,7 @@ function AllFont({ allData, item }) {
             <textarea
               style={{ fontFamily: ` ${item.fontFamily}`, fontSize: "30px" }}
               placeholder={`${item.des}`}
+              // placeholder={textValue}
             >
               {textValue}
             </textarea>

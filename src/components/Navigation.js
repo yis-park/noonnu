@@ -1,28 +1,26 @@
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./navigation.scss";
 import noonMore from "../assets/images/noon-more.jpg";
 import logImg from "../assets/images/login.png";
-import { useState } from "react";
+
+import navData from "./navData";
 
 function Navigation(props) {
+  const [data, setData] = useState(navData);
+
   const [subMenu, setSubMenu] = useState(false);
+  const outside = useRef();
 
   return (
     <nav className="navigation">
       <ul className="globalNav">
-        <li>
-          <Link to="/">추천 폰트</Link>
-        </li>
-        <li>
-          <Link to="/allfont">모든 폰트</Link>
-        </li>
-        <li>
-          <Link to="/whatfont">무슨 폰트?</Link>
-        </li>
-        <li>
-          <Link to="*">아무 디자인</Link>
-        </li>
+        {data.map((data) => (
+          <li key={data.id}>
+            <Link to={data.url}>{data.title} </Link>
+          </li>
+        ))}
       </ul>
       <ul className="input">
         <li>
@@ -70,7 +68,13 @@ function Navigation(props) {
           >
             <img class="noonMore" src={noonMore} />
             {subMenu ? (
-              <ul className="subMenu">
+              <ul
+                className="subMenu"
+                ref={outside}
+                onClick={(e) => {
+                  if (e.target == outside.current) setSubMenu(false);
+                }}
+              >
                 <li className="subLi">
                   <Link to=""> 공지사항</Link>
                 </li>
