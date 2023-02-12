@@ -34,7 +34,7 @@ function App() {
         <Route index path="/" element={<RecommendFont allData={allData} />} />
 
         <Route path="/allFont" element={<AllFont allData={allData} />}>
-          <Route path=":id" element={<FontMap />} />
+          <Route path=":allFontId" element={<FontMap allData={allData} />} />
         </Route>
         <Route path="/whatfont" element={<WhatFont />} />
         <Route path="*" element={<NotFoundPage />} />

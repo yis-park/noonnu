@@ -1,22 +1,26 @@
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./allFont.scss";
 
 function FontMap({ allData, item }) {
   const { id, title, des } = item;
+  const { allFontId } = useParams();
+  const navigate = useNavigate();
 
   return (
     <>
       <h1>FontMap</h1>
       <h3>{id}</h3>
-      {allData
+      <h3>이름: {title}</h3>
+      <h3>굵기: {des}</h3>
+      {/* {allData
         .filter((item) => item.title === id)
         .map((item) => (
           <section key={item.id}>
             <p>{item.title}</p>
             <p>{item.des}</p>
           </section>
-        ))}
+        ))} */}
     </>
     // <div className="grid">
     //   {allData

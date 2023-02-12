@@ -36,6 +36,18 @@
 - navData map으로 수정
 - FontDetail 연결안됨, axis, params 사용했느데,,, 다시 해봐야 할듯
 
+2/12 진행상황:
+
+- 왜 Axios, Fetch, XMLHttpRequest를 이용하지 않나요?
+  Axios, Fetch, XMLHttpRequest는 서버로부터 데이터를 받기 위한 함수(라이브러리)입니다. 하지만 우리는 로컬에 있는 JSON 파일을 불러오고 싶은 것이기 때문에 위의 요소들은 요구사항과 맞지않습니다. 로컬이 아닌 서버로부터 JSON 파일을 받기 위해서는 Axios, Fetch, XMLHttpRequest를 이용해야 합니다.
+
+- map() 함수를 이용하는 이유는 무엇인가요?
+  map() 함수는 ES6에 등장한 배열 함수입니다. 다른 함수를 이용해도 좋지만 map() 함수가 가장 쉽고 간편하게 사용할 수 있습니다. 다른 배열 함수들도 다른 부분에서 유용하게 사용할 수 있으니 한 번 익혀보는 것도 좋을 것 같습니다.
+
+  - 참고 https://velog.io/@cada/React%EC%97%90%EC%84%9C-%EB%A1%9C%EC%BB%AC-JSON-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EB%B6%88%EB%9F%AC%EC%98%A4%EB%8A%94-%EB%B0%A9%EB%B2%95
+
+  - json 파일 그냥 옮겨서 해보기,,,, 안됨,,,,
+
 ### 해야할 것
 
 - 폰트 제목 클릭 시 해당 컴포넌트로 이동시키기
