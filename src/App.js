@@ -13,12 +13,12 @@ import "./assets/style/style.scss";
 import Footer from "./layout/Footer";
 import "./assets/fonts/font.scss";
 import FontMap from "./components/FontMap";
-import FontDetail from "./components/FontDetail";
+import { FontDetail } from "./components/FontDetail";
 import Main from "./layout/Main";
 // import GlobalStyle from "./assets/fonts/Global";
 
 function App() {
-  const [allData, setAllData] = useState([]);
+  const [_allData, setAllData] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -33,13 +33,10 @@ function App() {
       <Header />
       <Routes>
         {/* <Route path="/" element={<Main allData={allData} />} /> */}
-        <Route path="/" element={<RecommendFont allData={allData} />} />
+        <Route path="/" element={<RecommendFont allData={_allData} />} />
         <Route path="allFont">
-          <Route index element={<AllFont allData={allData} />} />
-          <Route
-            path=":allFontTitle"
-            element={<FontDetail allData={allData} />}
-          />
+          <Route index element={<AllFont allData={_allData} />} />
+          <Route path=":allFontId" element={<FontDetail items={_allData} />} />
           {/* <Route path=":allFontId" element={<FontMap allData={allData} />} /> */}
         </Route>
         <Route path="/whatfont" element={<WhatFont />} />

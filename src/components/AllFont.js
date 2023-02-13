@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./allFont.scss";
 import Modal from "./Modal";
-import FontDetail from "./FontDetail";
+import { FontDetailPreView } from "./FontDetail";
+import axios from "axios";
 
 function AllFont({ allData }) {
   console.log(allData);
@@ -154,9 +155,9 @@ function AllFont({ allData }) {
         ))}
       </div> */}
       <div>
-        {allData.map((item) => {
-          <FontDetail key={item.id} onClick={onGo} />;
-        })}
+        {allData.map((_item) => (
+          <FontDetailPreView key={_item.id} item={_item} />
+        ))}
       </div>
     </article>
   );

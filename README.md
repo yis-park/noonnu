@@ -55,6 +55,12 @@
   - app2 포기. app.js로 계속 진행중.
   - index.js 만들어 json 파일 불러올 예정 =>안해봄
   - 2.7 수업자료 참고해서 보고있는데 안됨
+  - \_allData 갑자기 사라지는 현상 찾아보기(새로고침 해야 생김)
+  - 계속 맵 안돌아갔던거 문법 오류임 {} -> ()<div>
+    {allData.map((\_item) => (
+    <FontDetailPreView key={_item.id} item={_item} />
+    ))}
+      </div>
 
 ### 해야할 것
 
