@@ -2,10 +2,10 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./allFont.scss";
 
-function RecommendFont({ allData }) {
+function RecommendFont({ allData, item }) {
   const nav = useNavigate();
   const onGo = () => {
-    // nav(`/allFont/${item.id}`);
+    nav(`/allFont/${item.id}`);
   };
   return (
     <article className="wrapper">
@@ -28,14 +28,14 @@ function RecommendFont({ allData }) {
                     <h4>{item.title}</h4>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-8 w-8 stroke-current"
+                      className="h-8 w-8 stroke-current"
                       width="35"
                       height="35"
                       viewBox="0 0 12 24"
-                      stroke-width="1"
+                      strokeWidth="1"
                       fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                       <polyline points="9 6 15 12 9 18"></polyline>
@@ -55,15 +55,15 @@ function RecommendFont({ allData }) {
                 <p>{item.bold}</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 stroke-current fill-current pointer-events-none"
+                  className="h-6 w-6 stroke-current fill-current pointer-events-none"
                   // width="44"
                   height="20"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="#2c3e50"
                   fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"></path>

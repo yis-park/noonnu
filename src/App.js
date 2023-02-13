@@ -14,6 +14,7 @@ import Footer from "./layout/Footer";
 import "./assets/fonts/font.scss";
 import FontMap from "./components/FontMap";
 import FontDetail from "./components/FontDetail";
+import Main from "./layout/Main";
 // import GlobalStyle from "./assets/fonts/Global";
 
 function App() {
@@ -31,10 +32,15 @@ function App() {
       {/* <GlobalStyle /> */}
       <Header />
       <Routes>
-        <Route index path="/" element={<RecommendFont allData={allData} />} />
-
-        <Route path="/allFont" element={<AllFont allData={allData} />}>
-          <Route path=":allFontId" element={<FontMap allData={allData} />} />
+        {/* <Route path="/" element={<Main allData={allData} />} /> */}
+        <Route path="/" element={<RecommendFont allData={allData} />} />
+        <Route path="allFont">
+          <Route index element={<AllFont allData={allData} />} />
+          <Route
+            path=":allFontTitle"
+            element={<FontDetail allData={allData} />}
+          />
+          {/* <Route path=":allFontId" element={<FontMap allData={allData} />} /> */}
         </Route>
         <Route path="/whatfont" element={<WhatFont />} />
         <Route path="*" element={<NotFoundPage />} />

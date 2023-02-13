@@ -2,13 +2,15 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./allFont.scss";
 import Modal from "./Modal";
+import FontDetail from "./FontDetail";
 
-function AllFont({ allData, item }) {
+function AllFont({ allData }) {
+  console.log(allData);
   const userMenu = useRef();
   const [isOpen, setIsOpen] = useState(false);
 
   // 적는대로 값 나타나기
-  const [textValue, setTextvalue] = useState("");
+  const [textValue, setTextvalue] = useState();
 
   const handleSetValue = (e) => {
     const { value } = e.target;
@@ -28,20 +30,9 @@ function AllFont({ allData, item }) {
     }
   };
 
-  // const modalClose = ({ target }) => {
-  //   if (isOpen && !userMenu.current.contains(target)) setIsOpen(false);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("click", modalClose);
-  //   return () => {
-  //     window.removeEventListener("click", modalClose);
-  //   };
-  // });
-
   const nav = useNavigate();
   const onGo = () => {
-    nav(`/allFont/${item.id}`);
+    nav(`/allFont/${allData.title}`);
   };
   return (
     <article className="wrapper">
@@ -49,19 +40,18 @@ function AllFont({ allData, item }) {
         <h3>모든 폰트</h3>
         <p>상업적으로 사용할 수 있는 모든 폰트들을 만나 보세요</p>
       </div>
-
       <div className="input fixed after">
         <div className="search">
           <input type="search" placeholder="모든 폰트 내에서 검색" />
           <svg
-            class="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
+            className="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
             width="20"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="#2c3e50"
             fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <circle cx="10" cy="10" r="7"></circle>
@@ -73,21 +63,21 @@ function AllFont({ allData, item }) {
           <input
             placeholder="예시 문구를 적어보세요"
             value={textValue}
-            onchange={(e) => handleSetValue(e)}
+            onChange={(e) => handleSetValue(e)}
             onKeyDown={(e) => handleSetTab(e)}
             type="text"
           />
-          <p>{textValue}</p>
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
+            className="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
             width="22"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="#2c3e50"
             fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
@@ -95,27 +85,27 @@ function AllFont({ allData, item }) {
           </svg>
         </div>
       </div>
-      <div className="grid">
+      {/* <div className="grid">
         {allData.map((item) => (
           <div
             key={item.id}
             className="flex"
             style={{ fontFamily: ` ${item.fontFamily}` }}
           >
-            <Link to="allFont/${id}">
+            <Link to={`/allFont/${item.title}`}>
               <div className="click" onClick={onGo}>
                 <div className="hover">
                   <h4>{item.title}</h4>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-8 w-8 stroke-current"
+                    className="h-8 w-8 stroke-current"
                     width="35"
                     height="35"
                     viewBox="0 0 12 24"
-                    stroke-width="1"
+                    strokeWidth="1"
                     fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                     <polyline points="9 6 15 12 9 18"></polyline>
@@ -142,18 +132,18 @@ function AllFont({ allData, item }) {
                 }}
               >
                 {isOpen ? <Modal /> : null}
-                {/* {modal && <Modal onClose={onClose} />} */}
+
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 stroke-current fill-current pointer-events-none"
+                  className="h-6 w-6 stroke-current fill-current pointer-events-none"
                   // width="44"
                   height="20"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="#2c3e50"
                   fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"></path>
@@ -162,6 +152,11 @@ function AllFont({ allData, item }) {
             </div>
           </div>
         ))}
+      </div> */}
+      <div>
+        {allData.map((item) => {
+          <FontDetail key={item.id} onClick={onGo} />;
+        })}
       </div>
     </article>
   );

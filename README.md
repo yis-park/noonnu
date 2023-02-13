@@ -47,6 +47,14 @@
   - 참고 https://velog.io/@cada/React%EC%97%90%EC%84%9C-%EB%A1%9C%EC%BB%AC-JSON-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EB%B6%88%EB%9F%AC%EC%98%A4%EB%8A%94-%EB%B0%A9%EB%B2%95
 
   - json 파일 그냥 옮겨서 해보기,,,, 안됨,,,,
+  - json 데이터 불러오는걸 못함. 데이터 안불러와짐(app2)
+
+  2/13 진행상황:
+
+  - app2 만들어 따로 시도중. json파일을 src폴더에 넣어 해보고 있는데 그것도 안됨,, 뭐가 문제일까
+  - app2 포기. app.js로 계속 진행중.
+  - index.js 만들어 json 파일 불러올 예정
+  - 2.7 수업자료 참고
 
 ### 해야할 것
 
