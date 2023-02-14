@@ -11,7 +11,16 @@
       "des": "세상에 이런 폰트가 나오다니 천재인듯",
       "bold": "9가지 굵기",
       "fontFamily": "Pretendard-Regular",
-      "good": "5"
+      "click": "67.3k",
+      "Visual": "장식체",
+      "bold2": "9가지",
+      "good": "5",
+      "url": "https://cactus.tistory.com/306",
+      "weight": "300",
+      "weight2": "400",
+      "weight3": "500",
+      "weight4": "600",
+      "weight5": "700"
     },
     {
       "id": "2",
@@ -19,7 +28,14 @@
       "writer": "(주)티에스푸드",
       "des": "보글보글 부대찌개 맛있겠다",
       "bold": "3가지 굵기",
-      "fontFamily": "TTTtangsbudaejjigaeB"
+      "fontFamily": "TTTtangsbudaejjigaeB",
+      "click": "67.3k",
+      "Visual": "장식체",
+      "bold2": "3가지",
+      "url": "http://tsbudae.com/theme/GT2/contents/Fontpage.php",
+      "weight": "300",
+      "weight3": "500",
+      "weight5": "700"
     },
     {
       "id": "3",
@@ -28,7 +44,11 @@
       "des": "산들바람 흩날리는 마포꽃섬",
       "bold": "",
       "fontFamily": "MapoFlowerIsland",
-      "good": "5"
+      "good": "5",
+      "click": "67.3k",
+      "Visual": "장식체",
+      "bold2": "",
+      "url": "https://www.mapo.go.kr/site/main/content/mapo04010201"
     },
     {
       "id": "4",
@@ -36,7 +56,11 @@
       "writer": "네이버",
       "des": "하늘을 헤엄치는 구름처럼",
       "bold": "",
-      "fontFamily": "NanumSquareNeo-Variable"
+      "fontFamily": "NanumSquareNeo-Variable",
+      "click": "67.3k",
+      "Visual": "장식체",
+      "bold2": "",
+      "url": "https://campaign.naver.com/nanumsquare_neo/#introduce"
     },
     {
       "id": "5",
@@ -44,7 +68,11 @@
       "writer": "토끼네활자공장",
       "des": "꽃송이가 꽃송이가 그래 그래 피었네",
       "bold": "",
-      "fontFamily": "HSBombaram"
+      "fontFamily": "HSBombaram",
+      "click": "67.3k",
+      "Visual": "장식체",
+      "bold2": "",
+      "url": "https://blog.naver.com/hp0/221074080319"
     },
     {
       "id": "6",
@@ -53,7 +81,11 @@
       "des": "내년엔 책을 좀 읽자",
       "bold": "",
       "fontFamily": "KyoboHandwriting2021sjy",
-      "good": "5"
+      "good": "5",
+      "click": "67.3k",
+      "Visual": "장식체",
+      "bold2": "",
+      "url": "https://www.kyobobook.co.kr/handwriting/font"
     },
     {
       "id": "7",
@@ -61,7 +93,11 @@
       "writer": "국립아시아문화전당",
       "des": "순진하다는건 칭찬이 아니다",
       "bold": "",
-      "fontFamily": "ACCchildrenheartOTF-Regular"
+      "fontFamily": "ACCchildrenheartOTF-Regular",
+      "click": "67.3k",
+      "Visual": "장식체",
+      "bold2": "",
+      "url": "https://www.acc.go.kr/info/index.do"
     },
     {
       "id": "8",
@@ -69,7 +105,13 @@
       "writer": "평창군",
       "des": "예쁘고 독특한 별모양 폰트",
       "bold": "2가지 굵기",
-      "fontFamily": "PyeongChangPeace-Bold"
+      "fontFamily": "PyeongChangPeace-Bold",
+      "click": "67.3k",
+      "Visual": "장식체",
+      "bold2": "2가지",
+      "url": "https://www.pc.go.kr/portal/intro/intro-summary/pcFont",
+      "weight": "300",
+      "weight5": "700"
     },
     {
       "id": "9",
@@ -78,7 +120,11 @@
       "des": "가끔 가벼운 여행은 활력이 되지",
       "bold": "",
       "fontFamily": "YanoljaYacheR",
-      "good": "5"
+      "good": "5",
+      "click": "67.3k",
+      "Visual": "장식체",
+      "bold2": "",
+      "url": "https://www.kogl.or.kr/recommend/recommendDivView.do?recommendIdx=10441&division=font#"
     },
     {
       "id": "10",
@@ -86,7 +132,11 @@
       "writer": "길형진 (orioncactus)",
       "des": "90년대 PC통신에 쓰이던 고전 폰트",
       "bold": "",
-      "fontFamily": "DungGeunMo"
+      "fontFamily": "DungGeunMo",
+      "click": "67.3k",
+      "Visual": "장식체",
+      "bold2": "",
+      "url": "https://cactus.tistory.com/193"
     },
     {
       "id": "11",
@@ -95,16 +145,24 @@
       "des": "보글보글 맛있는 라면",
       "bold": "",
       "fontFamily": "Ansungtangmyun-ESG",
-      "good": "5"
+      "good": "5",
+      "click": "67.3k",
+      "Visual": "장식체",
+      "bold2": "",
+      "url": "http://www.nongshim.com/promotion/event/view/2022/09_ansung/ansung_event"
     },
     {
       "id": "12",
       "title": "Y콤퓨타체",
       "writer": "(주)케이티",
       "des": "컴퓨터 오래보면 눈 아프다",
-      "bold": "9가지 굵기",
+      "bold": "",
       "fontFamily": "Ycomputer-Regular",
-      "good": "5"
+      "good": "5",
+      "click": "67.3k",
+      "Visual": "장식체",
+      "bold2": "",
+      "url": "https://www.yspotlight.co.kr/brand/font?tabNo=3"
     }
   ]
 }
