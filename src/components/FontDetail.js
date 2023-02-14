@@ -80,23 +80,20 @@ export function FontDetailPreView({ item }) {
 
 export function FontDetail({ items }) {
   console.log(items);
-  // const url = () => {
-  //   window.open(`${item.url}`);
-  // };
   const [isOpen, setIsOpen] = useState(false);
   const userMenu = useRef();
   const navigate = useNavigate();
-
-  const onGo = () => {
-    // navigate("/main"); 해당 페이지로
-    navigate(-1);
-  };
 
   const _path = window.location.href;
   const _lastIndex = _path.lastIndexOf("/");
   const _subString = _path.substring(_lastIndex + 1);
 
   let item = items.find((_item) => _item.id === _subString);
+  let subWeight = item.numWeight;
+
+  let arrWeight = subWeight === 0 ? [300] : item.weight;
+
+  console.log(arrWeight);
 
   // 위에게 한줄 요약 한거임
   // for (let i = 0; i < items.length; i++) {
@@ -158,7 +155,7 @@ export function FontDetail({ items }) {
             </div>
           </div>
         </div>
-        <div className="bold">
+        <div className="bold2">
           <strong>폰트 미리보기</strong>
           <hr />
           <div className="try">
@@ -179,15 +176,22 @@ export function FontDetail({ items }) {
               <line x1="13.5" y1="6.5" x2="17.5" y2="10.5"></line>
             </svg>
           </div>
-          <textarea
-            type="text"
-            style={{
-              fontFamily: ` ${item.fontFamily}`,
-              fontWeight: `${item.weight}`,
-            }}
-            placeholder={`${item.des}`}
-          />
-          <textarea
+          <div className="map">
+            {arrWeight.map((_item) => (
+              <div className="weight">
+                <textarea
+                  type="text"
+                  style={{
+                    fontFamily: `${_item}`,
+                  }}
+                  placeholder={`${item.des}`}
+                />
+                <p>{_item}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* <textarea
             type="text"
             style={{
               fontFamily: ` ${item.fontFamily}`,
@@ -202,7 +206,7 @@ export function FontDetail({ items }) {
               fontWeight: `${item.weight3}`,
             }}
             placeholder={`${item.des}`}
-          />
+          ></textarea>
           <textarea
             type="text"
             style={{
@@ -218,7 +222,7 @@ export function FontDetail({ items }) {
               fontWeight: `${item.weight5}`,
             }}
             placeholder={`${item.des}`}
-          />
+          /> */}
         </div>
       </article>
     </div>

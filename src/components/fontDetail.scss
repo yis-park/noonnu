@@ -51,7 +51,6 @@
   }
   .bold {
     display: flex;
-    flex-direction: column;
     line-height: 1.5;
     textarea {
       border: none;
@@ -66,6 +65,31 @@
 
       &::placeholder {
         color: #000;
+      }
+    }
+  }
+  .bold2 {
+    .map {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+      .weight {
+        display: flex;
+        align-items: center;
+      }
+      textarea {
+        border: none;
+        width: 70%;
+        padding: 0 10px;
+        margin: 16px 10px 0;
+        resize: none;
+        outline-color: #fff;
+        font-size: 1.5rem;
+        line-height: 2rem;
+
+        &::placeholder {
+          color: #000;
+        }
       }
     }
   }

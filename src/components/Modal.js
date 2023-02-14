@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import logImg from "../assets/images/login.png";
 
@@ -23,6 +22,11 @@ function Modal({ onClose }) {
   `;
   const Button = styled.div`
     text-align: right;
+    height: 26px;
+    font-weight: bold;
+    :hover {
+      font-size: 15px;
+    }
   `;
   const Img = styled.img`
     width: 24px;
@@ -30,8 +34,13 @@ function Modal({ onClose }) {
     margin-right: 5px;
     margin-bottom: 5px;
   `;
-  const Link = styled.a`
+  const NavLink = styled.a`
     font-weight: bold;
+    height: 26px;
+
+    :hover {
+      font-size: 15px;
+    }
   `;
 
   return (

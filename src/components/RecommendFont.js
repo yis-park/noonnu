@@ -1,13 +1,8 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
 import "./allFont.scss";
 import { FontDetailPreView } from "./FontDetail";
 
 function RecommendFont({ allData, item }) {
-  const nav = useNavigate();
-  const onGo = () => {
-    nav(`/allFont/${allData.title}`);
-  };
   return (
     <article className="wrapper">
       <div className="txt">
