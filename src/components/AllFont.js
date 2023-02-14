@@ -1,15 +1,20 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./allFont.scss";
-import Modal from "./Modal";
+
 import { FontDetailPreView } from "./FontDetail";
-import axios from "axios";
 
 function AllFont({ allData }) {
   console.log(allData);
   const userMenu = useRef();
-  const [isOpen, setIsOpen] = useState(false);
 
+  const [isShow, setIsShow] = useState(false);
+  const onOpen = () => {
+    setIsShow(true);
+  };
+  const onClose = () => {
+    setIsShow(false);
+  };
   // 적는대로 값 나타나기
   const [textValue, setTextvalue] = useState();
 
@@ -86,7 +91,20 @@ function AllFont({ allData }) {
           </svg>
         </div>
       </div>
-      {/* <div className="grid">
+
+      <div className="grid">
+        {allData.map((_item) => (
+          <FontDetailPreView key={_item.id} item={_item} />
+        ))}
+      </div>
+    </article>
+  );
+}
+
+export default AllFont;
+
+{
+  /* <div className="grid">
         {allData.map((item) => (
           <div
             key={item.id}
@@ -153,14 +171,5 @@ function AllFont({ allData }) {
             </div>
           </div>
         ))}
-      </div> */}
-      <div>
-        {allData.map((_item) => (
-          <FontDetailPreView key={_item.id} item={_item} />
-        ))}
-      </div>
-    </article>
-  );
+      </div> */
 }
-
-export default AllFont;

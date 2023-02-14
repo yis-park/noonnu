@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./join.scss";
 
 function Join(props) {
   // name값 기준으로 초기화. 각각의 상태변화가 필요할 때

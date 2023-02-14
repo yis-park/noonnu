@@ -1,30 +1,49 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
-// import logImg from "../assets/images/longin.png";
+import logImg from "../assets/images/login.png";
 
-function Modal() {
+function Modal({ onClose }) {
   const Container = styled.div`
     border: 1px solid #6b7280;
-    border-radius: 20px;
-    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 10px 20px;
     position: fixed;
+    width: 350px;
     top: 56px;
     right: 100px;
-    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #0d1117;
   `;
-  // const Img = styled.div`
-  //   width: 22px;
-  //   height: 22px;
-  //   vertical-align: bottom;
-  //   margin-left: 16px;
-  // `;
+  const Button = styled.div`
+    text-align: right;
+  `;
+  const Img = styled.img`
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  `;
+  const Link = styled.a`
+    font-weight: bold;
+  `;
 
   return (
     <Container>
-      {/* <img className="logImg" src={logImg} /> */}
-      <p>즐겨찾기 기능은 로그인이 필요해요.</p>
+      <p>
+        <Img className="logImg" src={logImg} />
+        즐겨찾기 기능은 로그인이 필요해요.
+      </p>
       <p>회원가입 먼저 진행해주세요.</p>
-      <Link to="/join"> 회원가입 하러가기</Link>
+      <NavLink to="/join"> →회원가입 바로가기</NavLink>
+
+      <Button onClick={onClose}>닫기</Button>
     </Container>
   );
 }
