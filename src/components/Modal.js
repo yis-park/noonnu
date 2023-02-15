@@ -4,6 +4,7 @@ import logImg from "../assets/images/login.png";
 
 function Modal({ onClose }) {
   const Container = styled.div`
+    z-index: 9999px;
     border: 1px solid #6b7280;
     border-radius: 10px;
     background-color: #fff;
@@ -36,11 +37,6 @@ function Modal({ onClose }) {
   `;
   const NavLink = styled.a`
     font-weight: bold;
-    height: 26px;
-
-    :hover {
-      font-size: 15px;
-    }
   `;
 
   return (

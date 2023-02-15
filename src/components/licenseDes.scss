@@ -1,0 +1,30 @@
+@import "../assets/style/variable.scss";
+
+table {
+  border-collapse: collapse;
+  font-size: 14px;
+  width: 100%;
+  tr,
+  th,
+  td {
+    border: 1px solid #e4e4e7;
+    border-right: none;
+    border-left: none;
+    padding: 16px 24px;
+  }
+  thead tr {
+    padding: 12px 24px;
+    color: #0d1117;
+  }
+  tbody {
+    padding: 16px 24px;
+    color: #6b7280;
+
+    td:nth-child(1) {
+      color: #0d1117;
+    }
+    td:nth-last-child(1) {
+      text-align: right;
+    }
+  }
+}
