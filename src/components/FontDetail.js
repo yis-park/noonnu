@@ -104,6 +104,20 @@ export function FontDetail({ items }) {
 
   console.log(arrWeight);
 
+  // 트릭바!!
+  let script = document.createElement("script");
+  script.src = "https://unpkg.com/lodash";
+  script.async = true;
+  document.body.appendChild(script);
+  let slider = document.getElementById("myRange");
+  let output = document.getElementById("demo");
+  output.innerHTML = slider.value; // Display the default slider value
+
+  // Update the current slider value (each time you drag the slider handle)
+  slider.oninput = function () {
+    output.innerHTML = this.value;
+  };
+
   // 위에게 한줄 요약 한거임
   // for (let i = 0; i < items.length; i++) {
   //   if (items[i].id === _subString) {
@@ -168,31 +182,42 @@ export function FontDetail({ items }) {
           <div className="prev">
             <div className="str">
               <strong>폰트 미리보기</strong>
-            </div>
-            {/* <div className="line"></div> */}
-            <div className="try">
-              <input
-                onChange={onChange}
-                placeholder="예시 문구를 적어보세요"
-                type="text"
-                value={text}
-              />
+              <div className="line"></div>
+              {/* <div className="line"></div> */}
+              <div className="try">
+                <input
+                  onChange={onChange}
+                  placeholder="예시 문구를 적어보세요"
+                  type="text"
+                  value={text}
+                />
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
-                width="22"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="#2c3e50"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
-                <line x1="13.5" y1="6.5" x2="17.5" y2="10.5"></line>
-              </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
+                  width="22"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="#2c3e50"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
+                  <line x1="13.5" y1="6.5" x2="17.5" y2="10.5"></line>
+                </svg>
+                <div class="slidecontainer">
+                  <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    value="50"
+                    className="slider"
+                    id="myRange"
+                  />
+                </div>
+              </div>
             </div>
             <div className="pre">
               <div className="str">
@@ -225,7 +250,7 @@ export function FontDetail({ items }) {
               </div>
             ))}
             <hr />
-            <div className="ad">광고 란입니다.</div>
+
             <div className="license">
               <div className="license-p">
                 <p>라이선스 본문</p>

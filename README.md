@@ -86,6 +86,7 @@
 - 다운로드페이지 링크버튼 hover 하면 최상위로 올라와 모달창을 가림. 일단 삭제
 - input 입력시 다른곳에 동기화되게 하는 법이 jquery 로 밖에 못하는지,,,? -> 간단한 방법으로 해결 value={text} e.target이용
   but, 메인 화면에서 input에 작성할때 한번에 바뀌는거 다시 시도해보기
+- https://www.w3schools.com/howto/howto_js_rangeslider.asp 참고해서 트랙바 구현 js형식을 리액트로 바꾸는거 시도해보기
 
 ### 해야할 것
 

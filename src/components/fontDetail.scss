@@ -68,23 +68,72 @@
     }
   }
   .bold2 {
+    width: 80%;
     .prev {
       padding: 10px 0;
-      display: grid;
+      display: flex;
+      justify-content: space-between;
       width: 100%;
-      grid-template-columns: 2fr 1fr;
-
+      flex-direction: row;
       .pre {
         white-space: pre-wrap;
+        display: flex;
+        flex-direction: column;
       }
       .str {
         padding: 10px;
+        display: flex;
+        flex-direction: column;
       }
       .try {
         padding: 10px 0;
+        display: flex;
+        .slidecontainer {
+          width: 100%;
+        }
+
+        /* The slider itself */
+        .slider {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 100%;
+          height: 15px;
+          border-radius: 5px;
+          background: #d3d3d3;
+          outline: none;
+          opacity: 0.7;
+          -webkit-transition: 0.2s;
+          transition: opacity 0.2s;
+        }
+
+        /* Mouse-over effects */
+        .slider:hover {
+          opacity: 1;
+        }
+
+        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+        .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: #04aa6d;
+          cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: #04aa6d;
+          cursor: pointer;
+        }
       }
+
       .line {
         padding-top: 10px;
+        width: 100%;
         border-top: $border;
       }
     }
@@ -110,14 +159,7 @@
         }
       }
     }
-    .ad {
-      border: $border;
-      width: 60%;
-      height: 200px;
-      line-height: 200px;
-      text-align: center;
-      margin: 20px 0;
-    }
+
     .license {
       width: 60%;
       display: flex;
