@@ -19,7 +19,8 @@
       "license": "SIL 오픈 폰트 라이선스글꼴 단독 판매를 제외한 모든 상업적 행위 및 수정, 재배포가 가능합니다.\n 라이선스 전문: https://github.com/orioncactus/pretendard/blob/main/LICENSE",
       "licensedes": "O",
       "numWeight": 5,
-      "weight": [100, 200, 400, 800, 900]
+      "weight": [100, 200, 400, 800, 900],
+      "pre": "@font-face { \n        font-family: 'Pretendard-Regular'; \n        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/ \nnoonfonts_2107@1.1/Pretendard-Regular.woff') format('woff'); \n        font-weight: 400; \n        font-style: normal; \n    }"
     },
     {
       "id": "2",
@@ -52,7 +53,8 @@
       "url": "https://www.mapo.go.kr/site/main/content/mapo04010201",
       "license": "1. 마포 브랜드 서체의 지적 재산권은 마포구에 있습니다.    \n 2. 마포 브랜드 서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공합니다.    \n  단, 출처는 표기하시길 권장합니다. \n  3. 마포 브랜드 서체는 인쇄물, 광고물, 온라인 등 상업적 목적으로 사용할 수 있습니다. \n단, 유료로 판매하는 것은 금지하며 마포 브랜드 서체는 수정 할 수 없으며 배포되는 형태 그대로 사용해야 합니다.   \n 4. 마포 브랜드 서체를 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 마포구 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 마포구에 요청하실 수 있습니다.     \n문의: 마포구청 일자리지원과(02-3153-8553)",
       "licensedes": "X",
-      "numWeight": 0
+      "numWeight": 0,
+      "pre": "@font-face {\n        font-family: 'MapoFlowerIsland';\n        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');\n        font-weight: normal;\n        font-style: normal;\n    }"
     },
     {
       "id": "4",
@@ -67,7 +69,8 @@
       "url": "https://campaign.naver.com/nanumsquare_neo/#introduce",
       "license": "네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다.  \n     네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 공되며 자유롭게 수정하고 재배포하실 수 있습니다.  \n     단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다.   \n    네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다.    \n   예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다.  \n     네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다.    \n   이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다.    \n   정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다    \n   라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
       "licensedes": "O",
-      "numWeight": 0
+      "numWeight": 0,
+      "pre": "@font-face {\n        font-family: 'NanumSquareNeo-Variable';\n        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');\n        font-weight: normal;\n        font-style: normal;\n    }"
     },
     {
       "id": "5",
@@ -82,8 +85,8 @@
       "url": "https://blog.naver.com/hp0/221074080319",
       "license": "- 개인용, 상업용 전면 무료 사용 가능  \n    개인 및 기업 사용자를 포함한 모든 사용자에게      무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다.   \n    단, 글꼴 자체를 유료로 판매하는 것은 금지합니다.",
       "licensedes": "X",
-
-      "numWeight": 0
+      "numWeight": 0,
+      "pre": "@font-face {\n        font-family: 'HSBombaram';\n        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/HSBombaram.woff') format('woff');\n        font-weight: normal;\n        font-style: normal;\n    }"
     },
     {
       "id": "6",
@@ -99,7 +102,8 @@
       "url": "https://www.kyobobook.co.kr/handwriting/font",
       "license": "- 유의사항 \n      교보 손글씨 2019, 교보 손글씨 2020 박도연 서체는 수정 및 변경(디지털 포맷 변경), 개작, 개명, 재배포, 유료양도, 재판매를 금지합니다. \n      또한 당사의 이미지를 훼손할 수 있는 불법사이트나 허위과장광고, 기타 공서양속에 반하는 인쇄/광고물에 사용을 금지합니다. \n      교보 손글씨 2019, 교보 손글씨 2020 박도연 서체를 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 손글쓰기문화확산캠페인 홍보를 위해 활용될 수 있습니다. \n *기타 자세한 사항은 교보문고 고객센터(1544-1900)로 문의 주시기 바랍니다.",
       "licensedes": "X",
-      "numWeight": 0
+      "numWeight": 0,
+      "pre": "@font-face { \n        font-family: 'KyoboHandwriting2021sjy'; \n        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KyoboHandwriting2021sjy.woff2') format('woff2'); \n        font-weight: normal; \n        font-style: normal; \n    }"
     },
     {
       "id": "7",
@@ -114,7 +118,8 @@
       "url": "https://www.acc.go.kr/info/index.do",
       "license": "사용 및 저작권 안내  \n     ‘ACC글꼴(서체, 폰트)’의 지적 재산권은 국립아시아문화전당에 있습니다.  \n     ‘ACC글꼴’은 개인 및 기업 사용자를 포함한 모든 용자에게 무료로 제공되며, 인쇄물, 웹, 모바일, 광고물, 영상자료 등에 사용할 수 있습니다.",
       "licensedes": "X",
-      "numWeight": 0
+      "numWeight": 0,
+      "pre": "@font-face { \n         font-family: 'ACCchildrenheartOTF-Regular'; \n         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112-2@1.0/ACCchildrenheartOTF-Regular.woff') format('woff'); \n         font-weight: normal; \n         font-style: normal; \n     }"
     },
     {
       "id": "8",
@@ -130,7 +135,8 @@
       "license": "평창전용서체의 지적재산권은 평창군에 있습니다.    \n   '평창전용서체'는 개인 및 기업 사용자에게 무료 제공되며, 사용자들은 이를 다른이에게 자유롭게 배포할 수 있습니다.",
       "licensedes": "X",
       "numWeight": 2,
-      "weight": [300, 700]
+      "weight": [300, 700],
+      "pre": "@font-face {   \n         font-family: 'PyeongChangPeace-Bold';   \n         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');  \n         font-weight: 700;   \n         font-style: normal;   \n     }"
     },
     {
       "id": "9",
@@ -146,7 +152,8 @@
       "url": "https://www.kogl.or.kr/recommend/recommendDivView.do?recommendIdx=10441&division=font#",
       "license": "야놀자글꼴의 지적 재산권은 (주)야놀자에 있습니다.   \n    개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정, 재배포가 가능합니다.",
       "licensedes": "O",
-      "numWeight": 0
+      "numWeight": 0,
+      "pre": "@font-face {\n        font-family: 'YanoljaYacheR';\n        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YanoljaYacheR.woff') format('woff');\n        font-weight: normal;\n        font-style: normal;\n    }"
     },
     {
       "id": "10",
@@ -161,7 +168,8 @@
       "url": "https://cactus.tistory.com/193",
       "license": "원본과 동일한 퍼블릭 도메인으로 재배포, 수정, 영리 목적 사용 등 걱정 없이 자유롭게 쓰면 됩니다.  \n     둥근모꼴과 Fixedsys Excelsior 참조 \n      퍼블릭 도메인 알아보기 https://ko.m.wikipedia.org/wiki/퍼블릭_도메인",
       "licensedes": "O",
-      "numWeight": 0
+      "numWeight": 0,
+      "pre": "@font-face { \n         font-family: 'DungGeunMo'; \n         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff'); \n         font-weight: normal; \n         font-style: normal; \n    }"
     },
     {
       "id": "11",
@@ -177,7 +185,8 @@
       "url": "http://www.nongshim.com/promotion/event/view/2022/09_ansung/ansung_event",
       "license": "안성탕면 서체의 지적 재산권은 농심(www.nongshim.com)에 있습니다.  \n  안성탕면 서체는 개인/기업 누구나 사용 가능합니다. 또한 인쇄, 출판, 영상, 온라인 등 다양한 매체에서 사용할 수 있습니다.   \n    단, 글꼴 자체를 유료로 판매하는 것은 금지하며 안성탕면 서체는 수정 및 재배포를 할 수 없으며, 배포되는 형태 그대로 사용해야 합니다.",
       "licensedes": "X",
-      "numWeight": 0
+      "numWeight": 0,
+      "pre": "@font-face { \n         font-family: 'DungGeunMo'; \n         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff'); \n         font-weight: normal; \n         font-style: normal; \n    }"
     },
     {
       "id": "12",
@@ -193,7 +202,8 @@
       "url": "https://www.yspotlight.co.kr/brand/font?tabNo=3",
       "license": "라이선스 정책 \n      - Y이드스트릿체의 지식재산권은 (주)케이티에 있다.    \n   - Y이드스트릿체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며, 폰트 사용자에 의한 재배포 또한 가능하다.\n  단, 폰트 파일의 수정 및 유료 판매는 금지한다.     \n  - Y이드스트릿체는 인쇄, 웹, 영상, 임베딩, 패키지 등에 상업적 목적으로 사용이 가능하다.\n  단, BI/CI 용도로는 사용을 금지한다.",
       "licensedes": "X",
-      "numWeight": 0
+      "numWeight": 0,
+      "pre": "@font-face {\n        font-family: 'Ansungtangmyun-ESG';\n        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/Ansungtangmyun-ESG.woff2') format('woff2');\n        font-weight: normal;\n        font-style: normal;\n    }"
     }
   ]
 }
