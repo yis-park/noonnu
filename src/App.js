@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "./layout/Header";
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import RecommendFont from "./components/RecommendFont";
 import AllFont from "./components/AllFont";
 import WhatFont from "./components/WhatFont";
@@ -12,9 +12,9 @@ import axios from "axios";
 import "./assets/style/style.scss";
 import Footer from "./layout/Footer";
 import "./assets/fonts/font.scss";
-import FontMap from "./components/FontMap";
+
 import { FontDetail } from "./components/FontDetail";
-import Main from "./layout/Main";
+
 // import GlobalStyle from "./assets/fonts/Global";
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
       {/* <GlobalStyle /> */}
       <Header />
       <Routes>
-        <Route path="/" element={<RecommendFont allData={_allData} />} />
+        <Route path="/" index element={<RecommendFont allData={_allData} />} />
         <Route path="allFont">
           <Route index element={<AllFont allData={_allData} />} />
           <Route path=":allFontId" element={<FontDetail items={_allData} />} />

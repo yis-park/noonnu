@@ -2,12 +2,12 @@
 
 header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #e5e7eb;
   margin: 0 auto;
-  padding-left: $padding;
-  padding-right: $padding;
+  padding-left: 115px;
+  padding-right: 165px;
   height: 56px;
   transition: 0.4s;
   background-color: #fff;

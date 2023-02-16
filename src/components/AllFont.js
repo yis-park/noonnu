@@ -1,10 +1,12 @@
-import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRef, useState } from "react";
 import "./allFont.scss";
-
 import { FontDetailPreView } from "./FontDetail";
 
 function AllFont({ allData }) {
+  const [userInput, setUserInput] = useState("");
+  const onChange2 = (e) => {
+    setUserInput(e.target.value);
+  };
   const [text, setText] = useState("");
   const onChange = (e) => {
     setText(e.target.value);
@@ -20,10 +22,6 @@ function AllFont({ allData }) {
     setIsShow(false);
   };
 
-  const nav = useNavigate();
-  const onGo = () => {
-    nav(`/allFont/${allData.title}`);
-  };
   return (
     <article className="wrapper">
       <div className="txt">
@@ -32,7 +30,13 @@ function AllFont({ allData }) {
       </div>
       <div className="input fixed after">
         <div className="search">
-          <input type="search" placeholder="모든 폰트 내에서 검색" />
+          <input
+            type="search"
+            placeholder="모든 폰트 내에서 검색"
+            onChange={onChange2}
+            value={userInput}
+            name="q"
+          />
           <svg
             className="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
             width="20"
@@ -48,13 +52,15 @@ function AllFont({ allData }) {
             <line x1="21" y1="21" x2="15" y2="15"></line>
           </svg>
         </div>
+        <div className="userInput"></div>
 
         <div className="try">
           <input
             placeholder="예시 문구를 적어보세요"
             onChange={onChange}
             value={text}
-            type="text"
+            type="search"
+            name="q"
           />
 
           <svg
@@ -81,7 +87,7 @@ function AllFont({ allData }) {
             key={_item.id}
             item={_item}
             onChange={onChange}
-            value={text}
+            value={(userInput, text)}
           />
         ))}
       </div>

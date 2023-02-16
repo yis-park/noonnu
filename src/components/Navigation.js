@@ -6,12 +6,18 @@ import noonMore from "../assets/images/noon-more.jpg";
 import logImg from "../assets/images/login.png";
 
 import navData from "./navData";
+import { FontDetailPreView } from "./FontDetail";
 
-function Navigation(props) {
+function Navigation() {
   const [data, setData] = useState(navData);
+  const [userInput, setUserInput] = useState("");
+  const onChange2 = (e) => {
+    setUserInput(e.target.value);
+  };
 
   const [subMenu, setSubMenu] = useState(false);
   const outside = useRef();
+  // 검색
 
   return (
     <nav className="navigation">
@@ -24,7 +30,14 @@ function Navigation(props) {
       </ul>
       <ul className="input">
         <li>
-          <input type="text" name="message" placeholder="전체 폰트 검색" />
+          <input
+            type="search"
+            name="q"
+            placeholder="전체 폰트 검색"
+            onChange={onChange2}
+            value={userInput}
+          />
+
           <svg
             className="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
             width="20"
@@ -38,24 +51,6 @@ function Navigation(props) {
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <circle cx="10" cy="10" r="7"></circle>
             <line x1="21" y1="21" x2="15" y2="15"></line>
-          </svg>
-        </li>
-        <li>
-          d s
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="36"
-            height="36"
-            viewBox="0 0 36 36"
-            fill="none"
-            className="dark"
-          >
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M30.2945 23.2131C28.8883 23.7371 27.3664 24.0236 25.7776 24.0236C18.6336 24.0236 12.8423 18.2323 12.8423 11.0883C12.8423 8.88718 13.392 6.81447 14.3617 5C9.44519 6.83239 5.94342 11.5696 5.94342 17.1248C5.94342 24.2687 11.7348 30.0601 18.8787 30.0601C23.8216 30.0601 28.1169 27.2877 30.2945 23.2131Z"
-              fill="#FFD951"
-            ></path>
           </svg>
         </li>
       </ul>

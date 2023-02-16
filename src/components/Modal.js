@@ -25,9 +25,6 @@ function Modal({ onClose }) {
     text-align: right;
     height: 26px;
     font-weight: bold;
-    :hover {
-      font-size: 15px;
-    }
   `;
   const Img = styled.img`
     width: 24px;

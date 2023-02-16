@@ -3,22 +3,21 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 import "./fontDetail.scss";
 import LicenseDes from "./LicenseDes";
+import { FaBeer } from "react-icons/fa";
+import { BiCopy, IconName } from "react-icons/bi";
 
-export function FontDetailPreView({ item }) {
-  const [text, setText] = useState("");
-  const onChange = (e) => {
-    setText(e.target.value);
+export function FontDetailPreView({ item, onChange }) {
+  const [userInput, setUserInput] = useState("");
+  const onChange2 = (e) => {
+    setUserInput(e.target.value);
   };
+  console.log(item);
+  const [text, setText] = useState("");
   const userMenu = useRef();
   // console.log(item);
 
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
 
-  const onGo = () => {
-    // navigate("/main"); 해당 페이지로
-    navigate(-1);
-  };
   return (
     <div>
       <article className="flex" style={{ fontFamily: ` ${item.fontFamily}` }}>
@@ -48,8 +47,11 @@ export function FontDetailPreView({ item }) {
         <textarea
           style={{ fontFamily: ` ${item.fontFamily}`, fontSize: "30px" }}
           placeholder={`${item.des}`}
-          // placeholder={textValue}
-        ></textarea>
+          value={userInput}
+          onChange={onChange2}
+        >
+          {userInput}
+        </textarea>
 
         <div className="bold">
           <p>{item.bold}</p>
@@ -104,20 +106,22 @@ export function FontDetail({ items }) {
 
   console.log(arrWeight);
 
-  // 트릭바!!
-  let script = document.createElement("script");
-  script.src = "https://unpkg.com/lodash";
-  script.async = true;
-  document.body.appendChild(script);
-  let slider = document.getElementById("myRange");
-  let output = document.getElementById("demo");
-  output.innerHTML = slider.value; // Display the default slider value
-
-  // Update the current slider value (each time you drag the slider handle)
-  slider.oninput = function () {
-    output.innerHTML = this.value;
+  // 사이드바!!
+  const [inputs, setInputs] = useState();
+  const onChange2 = (e) => {
+    setInputs(e.target.value);
   };
 
+  // 복사기능
+  const handleCopyClipBoard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+
+      alert("복사 되었습니다");
+    } catch (error) {
+      alert("복사 실패!");
+    }
+  };
   // 위에게 한줄 요약 한거임
   // for (let i = 0; i < items.length; i++) {
   //   if (items[i].id === _subString) {
@@ -186,12 +190,13 @@ export function FontDetail({ items }) {
               {/* <div className="line"></div> */}
               <div className="try">
                 <input
+                  className="detailInput"
                   onChange={onChange}
-                  placeholder="예시 문구를 적어보세요"
-                  type="text"
                   value={text}
+                  placeholder="예시 문구를 적어보세요"
+                  type="search"
+                  name="q"
                 />
-
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
@@ -207,31 +212,38 @@ export function FontDetail({ items }) {
                   <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
                   <line x1="13.5" y1="6.5" x2="17.5" y2="10.5"></line>
                 </svg>
-                <div class="slidecontainer">
+                <div className="slidecontainer">
                   <input
+                    onChange={onChange2}
                     type="range"
-                    min="1"
+                    min="0"
                     max="100"
-                    value="50"
+                    value={inputs}
                     className="slider"
-                    id="myRange"
+                    name="q"
                   />
                 </div>
+                <p>{inputs}px</p>
               </div>
             </div>
             <div className="pre">
-              <div className="str">
-                <strong>웹폰트</strong>
-              </div>
-              <div className="line"></div>
-              <div>
-                <textarea
-                  name=""
-                  id=""
-                  cols="50"
-                  rows="10"
-                  style={{ resize: "none" }}
-                ></textarea>
+              <div className="stry">
+                <div className="webfont">
+                  <strong>웹폰트로 사용</strong>
+                  <button
+                    onClick={() => handleCopyClipBoard(`${item.pre}`)}
+                    className="icon"
+                  >
+                    <BiCopy />
+                  </button>
+                </div>
+
+                <div className="line"></div>
+                <div>
+                  <textarea name="q" cols="50" rows="10">
+                    {item.pre}
+                  </textarea>
+                </div>
               </div>
             </div>
           </div>
@@ -241,17 +253,20 @@ export function FontDetail({ items }) {
                 <input
                   onChange={onChange}
                   value={text}
+                  name="q"
                   placeholder={`${item.des}`}
                   style={{
                     fontFamily: `${item.fontFamily}`,
                     fontWeight: `${_item}`,
+                    fontSize: `${inputs}px`,
                   }}
                 />
+                <p style={{ fontFamily: `${item.fontFamily}` }}>{_item}</p>
               </div>
             ))}
-            <hr />
 
             <div className="license">
+              <div className="line"></div>
               <div className="license-p">
                 <p>라이선스 본문</p>
               </div>

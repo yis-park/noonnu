@@ -88,12 +88,42 @@
   but, 메인 화면에서 input에 작성할때 한번에 바뀌는거 다시 시도해보기
 - https://www.w3schools.com/howto/howto_js_rangeslider.asp 참고해서 트랙바 구현 js형식을 리액트로 바꾸는거 시도해보기
 
+2/16 진행상황:
+
+- 원하는 문구 입력시 디테일 쪽에서는 적용되나 모든폰트 에서는 적용되지 않음
+- 검색 필터 기능도 안됨
+- handleChange 참고해 다시 해보기
+- 트릭바 대신 input range 태그를 이용해 간단히 해결 완료
+  <input
+    onChange={onChange2}
+    type="range"
+    min="8"
+    max="80"
+    value={inputs}
+    className="slider"
+                    />
+  <!-- 복잡한 태그 -->
+
+const {script} =
+let script = document.createElement("script");
+script.src = "https://unpkg.com/lodash";
+script.async = true;
+document.body.appendChild(script);
+let slider = document.getElementById("myRange");
+let output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function () {
+output.innerHTML = this.value;
+};
+
 ### 해야할 것
 
 - 폰트 제목 클릭 시 해당 컴포넌트로 이동시키기 (0)
 - FontDetail 컴포넌트에 useParams() 시도 (x) useRef로 대체
 - 이벤트클릭 된 아이들 영역 밖 클릭시 닫히도록(e.target 사용해야 하는 것 같음,,,!! useRef나) (x) 닫기 버튼 추가로 대체
-- input에 검색시 해당 내용의 폰트 검색되게
-- 폰트사이즈 변경되는것
+- input에 검색시 해당 내용의 폰트 검색되게 (o)
+- 폰트사이즈 변경되는것 (o)
+- https://www.w3schools.com/howto/howto_js_rangeslider.asp 참고해서 트랙바 구현 (o) input으로 해결
 - 디스커버리 시도해보기
-- https://www.w3schools.com/howto/howto_js_rangeslider.asp 참고해서 트랙바 구현

@@ -22,6 +22,16 @@
   .input {
     display: flex;
     padding: 10px;
+    .search svg {
+      position: absolute;
+      top: 158px;
+      left: 420px;
+    }
+    .try svg {
+      position: absolute;
+      top: 158px;
+      left: 745px;
+    }
   }
 
   .grid {

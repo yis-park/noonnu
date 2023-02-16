@@ -12,7 +12,8 @@ input {
   border-radius: 20px;
   border: $border;
   font-size: 14px;
-  padding: 0.5rem 0.75rem;
+  margin-left: 10px;
+  padding: 8px 40px 8px 12px;
   &:focus {
     border-color: $Click;
   }

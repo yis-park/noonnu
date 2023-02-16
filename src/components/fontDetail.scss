@@ -29,6 +29,7 @@
     .dowmload {
       display: flex;
       align-items: center;
+      padding-right: 240px;
 
       a {
         border-radius: 2px;
@@ -67,75 +68,60 @@
       }
     }
   }
+
   .bold2 {
-    width: 80%;
     .prev {
       padding: 10px 0;
       display: flex;
       justify-content: space-between;
-      width: 100%;
+      width: 86%;
       flex-direction: row;
-      .pre {
-        white-space: pre-wrap;
-        display: flex;
-        flex-direction: column;
-      }
+
       .str {
+        width: 70%;
         padding: 10px;
         display: flex;
         flex-direction: column;
+        .webfont {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          strong {
+            padding-bottom: 10px;
+          }
+          .icon {
+            font-size: 20px;
+          }
+        }
+        textarea {
+          padding: 10px;
+          resize: none;
+          font-size: 14px;
+          border: 1px solid rgb(228, 228, 231);
+          outline-width: 0;
+        }
       }
+
       .try {
         padding: 10px 0;
         display: flex;
+        .detailInput {
+          width: 60%;
+        }
+        svg {
+          position: absolute;
+          left: 420px;
+          top: 290px;
+        }
         .slidecontainer {
-          width: 100%;
-        }
-
-        /* The slider itself */
-        .slider {
-          -webkit-appearance: none;
-          appearance: none;
-          width: 100%;
-          height: 15px;
-          border-radius: 5px;
-          background: #d3d3d3;
-          outline: none;
-          opacity: 0.7;
-          -webkit-transition: 0.2s;
-          transition: opacity 0.2s;
-        }
-
-        /* Mouse-over effects */
-        .slider:hover {
-          opacity: 1;
-        }
-
-        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-        .slider::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          appearance: none;
-          width: 25px;
-          height: 25px;
-          border-radius: 50%;
-          background: #04aa6d;
-          cursor: pointer;
-        }
-
-        .slider::-moz-range-thumb {
-          width: 25px;
-          height: 25px;
-          border-radius: 50%;
-          background: #04aa6d;
-          cursor: pointer;
+          // width: 100%;
         }
       }
-
-      .line {
-        padding-top: 10px;
-        width: 100%;
-        border-top: $border;
-      }
+    }
+    .line {
+      padding-top: 5px;
+      width: 100%;
+      border-top: 1px solid rgb(228, 228, 231);
     }
     .map {
       display: flex;
@@ -147,7 +133,7 @@
       }
       input {
         border: none;
-        width: 60%;
+        width: 55%;
         padding: 8px 10px;
         resize: none;
         outline-color: #fff;
