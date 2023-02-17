@@ -124,6 +124,23 @@ output.innerHTML = this.value;
 - textarea 대신 p 태그로 함수식 써서 시도해보기 해결안됨,,,,,,
 - useContext로 활용해보기 실패,,
 - 참고 사이트 https://velog.io/@velopert/react-context-tutorial
+- 폰트사이즈변경, 예시문구 렌더링 성공 => 함수값 아닌 value값을 넣었어야 했음,,,!
+  <textarea
+  style={{ fontFamily: ` ${item.fontFamily}`, fontSize: "30px" }}
+  placeholder={`${item.des}`}
+  onChange={onChange} >
+  {text}
+  </textarea>
+  위에거 아니고 아래거
+  <textarea
+  style={{
+             fontFamily: `${item.fontFamily}`,
+             fontSize: `${txtFontSize}px`,
+           }}
+  placeholder={`${item.des}`}
+  value={txtValue}
+  />
+  - 검색 기능 handleQueryChange 함수 이용해 구현 (nav에 있는 검색 기능은 다시 시도 해봐야 함)
 
 ### 해야할 것
 
@@ -134,3 +151,4 @@ output.innerHTML = this.value;
 - 폰트사이즈 변경되는것 (o)
 - https://www.w3schools.com/howto/howto_js_rangeslider.asp 참고해서 트랙바 구현 (o) input으로 해결
 - 디스커버리 시도해보기
+- 셀렉트 기능 시도해보기

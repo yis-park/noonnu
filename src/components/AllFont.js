@@ -3,20 +3,16 @@ import "./allFont.scss";
 import { FontDetailPreView } from "./FontDetail";
 
 function AllFont({ allData }) {
-  const [inputs, setInputs] = useState();
-  const onChange2 = (e) => {
-    setInputs(e.target.value);
+  const [slideBarValue, setSlideBarValue] = useState("30");
+  const onSlideBarValueChanged = (e) => {
+    setSlideBarValue(e.target.value);
   };
-  // const [userInput, setUserInput] = useState("");
-  // function handleChange(event) {
-  //   setUserInput(event.target.value);
-  // }
 
-  const [text, setText] = useState("");
-  const onChange = (e) => {
-    setText(e.target.value);
+  const [exampleText, setExampleText] = useState("");
+  const onExampleTextChanged = (e) => {
+    setExampleText(e.target.value);
   };
-  // console.log(allData);
+
   const userMenu = useRef();
 
   const [isShow, setIsShow] = useState(false);
@@ -27,6 +23,33 @@ function AllFont({ allData }) {
     setIsShow(false);
   };
 
+  // 검색
+
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState(allData);
+
+  const handleQueryChange = (event) => {
+    const searchValue = event.target.value;
+    setQuery(searchValue);
+
+    if (searchValue.length > 0) {
+      searchFonts(searchValue);
+    } else {
+      setResults(allData);
+    }
+  };
+
+  // 검색어와 일치하는 폰트 이름을 찾습니다.
+  function searchFonts(query) {
+    const myFilter = query.toLowerCase();
+    const fontNameMatches = allData.filter((font) =>
+      font.title?.toLowerCase().includes(myFilter)
+    );
+    console.log(fontNameMatches);
+    // 검색 결과를 업데이트합니다.
+    setResults(fontNameMatches);
+  }
+
   return (
     <article className="wrapper">
       <div className="txt">
@@ -35,7 +58,13 @@ function AllFont({ allData }) {
       </div>
       <div className="input fixed after">
         <div className="search">
-          <input type="search" placeholder="모든 폰트 내에서 검색" name="q" />
+          <input
+            type="search"
+            placeholder="모든 폰트 내에서 검색"
+            name="q"
+            onChange={handleQueryChange}
+            value={query}
+          />
           <svg
             className="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
             width="20"
@@ -56,12 +85,11 @@ function AllFont({ allData }) {
         <div className="try">
           <input
             placeholder="예시 문구를 적어보세요"
-            value={text}
-            onChange={onChange}
+            value={exampleText}
+            onChange={onExampleTextChanged}
             type="text"
             name="q"
           />
-
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
@@ -80,21 +108,25 @@ function AllFont({ allData }) {
         </div>
         <div className="slidecontainer">
           <input
-            onChange={onChange2}
-            style={{ fontSize: `${inputs}px` }}
+            onChange={onSlideBarValueChanged}
+            style={{ fontSize: `${slideBarValue}px` }}
             type="range"
             min="8"
             max="80"
+            value={slideBarValue}
             className="slider"
             name="q"
           />
         </div>
-        <p>{inputs}px</p>
+        <p>{slideBarValue}px</p>
       </div>
-
       <div className="grid">
-        {allData.map((_item) => (
-          <FontDetailPreView key={_item.id} item={_item} />
+        {results.map((_item) => (
+          <FontDetailPreView
+            item={_item}
+            txtValue={exampleText}
+            txtFontSize={slideBarValue}
+          />
         ))}
       </div>
     </article>

@@ -5,14 +5,10 @@ import "./fontDetail.scss";
 import LicenseDes from "./LicenseDes";
 import { BiCopy } from "react-icons/bi";
 
-export function FontDetailPreView({ item, onChange2, onChange }) {
-  const [text, setText] = useState("");
-  const [inputs, setInputs] = useState(30);
+export function FontDetailPreView({ item, txtValue, txtFontSize }) {
   const userMenu = useRef();
   // console.log(item);
-
   const [isOpen, setIsOpen] = useState(false);
-  let TextMessage = `${item.des}`;
 
   return (
     <div>
@@ -41,21 +37,13 @@ export function FontDetailPreView({ item, onChange2, onChange }) {
           </div>
         </Link>
         <textarea
-          style={{ fontFamily: ` ${item.fontFamily}`, fontSize: "30px" }}
+          style={{
+            fontFamily: `${item.fontFamily}`,
+            fontSize: `${txtFontSize}px`,
+          }}
           placeholder={`${item.des}`}
-          onChange={onChange}
-        >
-          {text}
-        </textarea>
-        {/* <p
-          style={{ fontFamily: ` ${item.fontFamily}`, fontSize: `${inputs}px` }}
-          className="textarea"
-          value={text}
-          onChange={onChange2}
-        >
-         {text} 
-          {TextMessage}
-        </p>*/}
+          value={txtValue}
+        />
 
         <div className="bold">
           <p>{item.bold}</p>
