@@ -5,10 +5,9 @@ import "./fontDetail.scss";
 import LicenseDes from "./LicenseDes";
 import { BiCopy } from "react-icons/bi";
 
-export function FontDetailPreView({ item, onChange2 }) {
+export function FontDetailPreView({ item, onChange2, onChange }) {
   const [text, setText] = useState("");
   const [inputs, setInputs] = useState(30);
-  console.log(item);
   const userMenu = useRef();
   // console.log(item);
 
@@ -41,21 +40,22 @@ export function FontDetailPreView({ item, onChange2 }) {
             <div className="line"></div>
           </div>
         </Link>
-        {/* <textarea
+        <textarea
           style={{ fontFamily: ` ${item.fontFamily}`, fontSize: "30px" }}
           placeholder={`${item.des}`}
           onChange={onChange}
         >
           {text}
-        </textarea> */}
-        <p
+        </textarea>
+        {/* <p
           style={{ fontFamily: ` ${item.fontFamily}`, fontSize: `${inputs}px` }}
           className="textarea"
           value={text}
           onChange={onChange2}
         >
+         {text} 
           {TextMessage}
-        </p>
+        </p>*/}
 
         <div className="bold">
           <p>{item.bold}</p>
@@ -176,7 +176,9 @@ export function FontDetail({ items }) {
         <div className="bold2">
           <div className="prev">
             <div className="str">
-              <strong>폰트 미리보기</strong>
+              <div className="webfont">
+                <strong>폰트 미리보기</strong>
+              </div>
               <div className="line"></div>
               <div className="try">
                 <input
@@ -208,7 +210,6 @@ export function FontDetail({ items }) {
                     type="range"
                     min="8"
                     max="80"
-                    value={inputs}
                     className="slider"
                     name="q"
                   />
@@ -229,7 +230,7 @@ export function FontDetail({ items }) {
                 </div>
 
                 <div className="line"></div>
-                <div>
+                <div className="texta">
                   <textarea name="q" cols="50" rows="10">
                     {item.pre}
                   </textarea>

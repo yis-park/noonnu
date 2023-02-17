@@ -14,6 +14,7 @@ import Footer from "./layout/Footer";
 import "./assets/fonts/font.scss";
 
 import { FontDetail } from "./components/FontDetail";
+// import { Search } from "./components/Search";
 
 function App() {
   const [_allData, setAllData] = useState([]);
@@ -25,9 +26,9 @@ function App() {
     };
     getData();
   }, []);
+
   return (
     <>
-      {/* <GlobalStyle /> */}
       <Header />
       <Routes>
         <Route path="/" element={<RecommendFont allData={_allData} />} />
@@ -42,6 +43,7 @@ function App() {
       </Routes>
 
       <Footer />
+      {/* <Search /> */}
     </>
   );
 }

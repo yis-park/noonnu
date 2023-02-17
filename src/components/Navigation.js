@@ -50,13 +50,7 @@ function Navigation({ _allData }) {
       </ul>
       <ul className="input">
         <li>
-          <input
-            type="search"
-            name="q"
-            placeholder="전체 폰트 검색"
-            value={query}
-            onChange={handleQueryChange}
-          />
+          <input type="search" name="q" placeholder="전체 폰트 검색" />
 
           <svg
             className="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"

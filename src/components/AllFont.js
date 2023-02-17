@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import "./allFont.scss";
 import { FontDetailPreView } from "./FontDetail";
 
@@ -16,7 +16,7 @@ function AllFont({ allData }) {
   const onChange = (e) => {
     setText(e.target.value);
   };
-  console.log(allData);
+  // console.log(allData);
   const userMenu = useRef();
 
   const [isShow, setIsShow] = useState(false);
@@ -85,7 +85,6 @@ function AllFont({ allData }) {
             type="range"
             min="8"
             max="80"
-            value={inputs}
             className="slider"
             name="q"
           />
@@ -95,7 +94,7 @@ function AllFont({ allData }) {
 
       <div className="grid">
         {allData.map((_item) => (
-          <FontDetailPreView key={_item.id} item={_item} onChange={onChange2} />
+          <FontDetailPreView key={_item.id} item={_item} />
         ))}
       </div>
     </article>

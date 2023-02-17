@@ -82,39 +82,40 @@
         padding: 10px;
         display: flex;
         flex-direction: column;
-        .webfont {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          strong {
-            padding-bottom: 10px;
-          }
-          .icon {
-            font-size: 20px;
-          }
+      }
+      .webfont {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        strong {
+          padding-bottom: 10px;
         }
-        textarea {
-          padding: 10px;
-          resize: none;
-          font-size: 14px;
-          border: 1px solid rgb(228, 228, 231);
-          outline-width: 0;
+        .icon {
+          font-size: 20px;
         }
       }
-
+      .texta textarea {
+        padding: 10px;
+        resize: none;
+        font-size: 14px;
+        border: 1px solid rgb(228, 228, 231);
+        outline-width: 0;
+      }
       .try {
         padding: 10px 0;
         display: flex;
+        align-items: center;
         .detailInput {
           width: 60%;
         }
         svg {
           position: absolute;
-          left: 420px;
+          left: 680px;
           top: 290px;
         }
-        .slidecontainer {
-          // width: 100%;
+        p {
+          height: 34px;
+          line-height: 34px;
         }
       }
     }
