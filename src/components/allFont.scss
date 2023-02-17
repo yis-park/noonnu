@@ -93,6 +93,14 @@
           color: #000;
         }
       }
+      .textarea {
+        border: none;
+        height: 144px;
+        padding: 0 10px;
+        margin: 16px 10px 0;
+        resize: none;
+        outline-color: #fff;
+      }
       span {
         font-size: 30px;
         padding: 10px;

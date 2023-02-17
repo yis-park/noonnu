@@ -8,16 +8,36 @@ import logImg from "../assets/images/login.png";
 import navData from "./navData";
 import { FontDetailPreView } from "./FontDetail";
 
-function Navigation() {
+function Navigation({ _allData }) {
   const [data, setData] = useState(navData);
-  const [userInput, setUserInput] = useState("");
-  const onChange2 = (e) => {
-    setUserInput(e.target.value);
-  };
 
   const [subMenu, setSubMenu] = useState(false);
   const outside = useRef();
   // 검색
+
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+
+  function handleQueryChange(event) {
+    const { value } = event.target;
+    setQuery(value);
+
+    if (value.length > 2) {
+      searchFonts(value);
+    } else {
+      setResults([]);
+    }
+  }
+
+  function searchFonts(query) {
+    // 검색어와 일치하는 폰트 이름을 찾습니다.
+    const fontNameMatches = _allData.filter((font) =>
+      font.title.toLowerCase().includes(query.toLowerCase())
+    );
+    console.log(fontNameMatches);
+    // 검색 결과를 업데이트합니다.
+    setResults(fontNameMatches);
+  }
 
   return (
     <nav className="navigation">
@@ -34,8 +54,8 @@ function Navigation() {
             type="search"
             name="q"
             placeholder="전체 폰트 검색"
-            onChange={onChange2}
-            value={userInput}
+            value={query}
+            onChange={handleQueryChange}
           />
 
           <svg
@@ -52,6 +72,13 @@ function Navigation() {
             <circle cx="10" cy="10" r="7"></circle>
             <line x1="21" y1="21" x2="15" y2="15"></line>
           </svg>
+          {results.length > 0 && (
+            <div>
+              {results.map((font) => (
+                <FontDetailPreView key={font.id} font={font} />
+              ))}
+            </div>
+          )}
         </li>
       </ul>
       <ul className="icon">

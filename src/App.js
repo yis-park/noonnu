@@ -15,8 +15,6 @@ import "./assets/fonts/font.scss";
 
 import { FontDetail } from "./components/FontDetail";
 
-// import GlobalStyle from "./assets/fonts/Global";
-
 function App() {
   const [_allData, setAllData] = useState([]);
 
@@ -32,7 +30,7 @@ function App() {
       {/* <GlobalStyle /> */}
       <Header />
       <Routes>
-        <Route path="/" index element={<RecommendFont allData={_allData} />} />
+        <Route path="/" element={<RecommendFont allData={_allData} />} />
         <Route path="allFont">
           <Route index element={<AllFont allData={_allData} />} />
           <Route path=":allFontId" element={<FontDetail items={_allData} />} />

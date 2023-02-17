@@ -3,10 +3,15 @@ import "./allFont.scss";
 import { FontDetailPreView } from "./FontDetail";
 
 function AllFont({ allData }) {
-  const [userInput, setUserInput] = useState("");
+  const [inputs, setInputs] = useState();
   const onChange2 = (e) => {
-    setUserInput(e.target.value);
+    setInputs(e.target.value);
   };
+  // const [userInput, setUserInput] = useState("");
+  // function handleChange(event) {
+  //   setUserInput(event.target.value);
+  // }
+
   const [text, setText] = useState("");
   const onChange = (e) => {
     setText(e.target.value);
@@ -30,13 +35,7 @@ function AllFont({ allData }) {
       </div>
       <div className="input fixed after">
         <div className="search">
-          <input
-            type="search"
-            placeholder="모든 폰트 내에서 검색"
-            onChange={onChange2}
-            value={userInput}
-            name="q"
-          />
+          <input type="search" placeholder="모든 폰트 내에서 검색" name="q" />
           <svg
             className="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
             width="20"
@@ -57,9 +56,9 @@ function AllFont({ allData }) {
         <div className="try">
           <input
             placeholder="예시 문구를 적어보세요"
-            onChange={onChange}
             value={text}
-            type="search"
+            onChange={onChange}
+            type="text"
             name="q"
           />
 
@@ -79,16 +78,24 @@ function AllFont({ allData }) {
             <line x1="13.5" y1="6.5" x2="17.5" y2="10.5"></line>
           </svg>
         </div>
+        <div className="slidecontainer">
+          <input
+            onChange={onChange2}
+            style={{ fontSize: `${inputs}px` }}
+            type="range"
+            min="8"
+            max="80"
+            value={inputs}
+            className="slider"
+            name="q"
+          />
+        </div>
+        <p>{inputs}px</p>
       </div>
 
       <div className="grid">
         {allData.map((_item) => (
-          <FontDetailPreView
-            key={_item.id}
-            item={_item}
-            onChange={onChange}
-            value={(userInput, text)}
-          />
+          <FontDetailPreView key={_item.id} item={_item} onChange={onChange2} />
         ))}
       </div>
     </article>

@@ -93,7 +93,7 @@
 - 원하는 문구 입력시 디테일 쪽에서는 적용되나 모든폰트 에서는 적용되지 않음
 - 검색 필터 기능도 안됨
 - handleChange 참고해 다시 해보기
-- 트릭바 대신 input range 태그를 이용해 간단히 해결 완료
+- 트릭바(사이드바) 대신 input range 태그를 이용해 간단히 해결 완료
   <input
     onChange={onChange2}
     type="range"
@@ -117,6 +117,11 @@ output.innerHTML = slider.value; // Display the default slider value
 slider.oninput = function () {
 output.innerHTML = this.value;
 };
+
+2/17 진행상황:
+
+- 문구 입력하는곳 textarea에서 적으면 반영되는데 input에서 적은 값을 받아오지 못함
+- textarea 대신 p 태그로 함수식 써서 시도해보기 해결안됨,,,,,,
 
 ### 해야할 것
 

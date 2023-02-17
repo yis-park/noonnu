@@ -1,22 +1,19 @@
 import { useRef, useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 import "./fontDetail.scss";
 import LicenseDes from "./LicenseDes";
-import { FaBeer } from "react-icons/fa";
-import { BiCopy, IconName } from "react-icons/bi";
+import { BiCopy } from "react-icons/bi";
 
-export function FontDetailPreView({ item, onChange }) {
-  const [userInput, setUserInput] = useState("");
-  const onChange2 = (e) => {
-    setUserInput(e.target.value);
-  };
-  console.log(item);
+export function FontDetailPreView({ item, onChange2 }) {
   const [text, setText] = useState("");
+  const [inputs, setInputs] = useState(30);
+  console.log(item);
   const userMenu = useRef();
   // console.log(item);
 
   const [isOpen, setIsOpen] = useState(false);
+  let TextMessage = `${item.des}`;
 
   return (
     <div>
@@ -44,14 +41,21 @@ export function FontDetailPreView({ item, onChange }) {
             <div className="line"></div>
           </div>
         </Link>
-        <textarea
+        {/* <textarea
           style={{ fontFamily: ` ${item.fontFamily}`, fontSize: "30px" }}
           placeholder={`${item.des}`}
-          value={userInput}
+          onChange={onChange}
+        >
+          {text}
+        </textarea> */}
+        <p
+          style={{ fontFamily: ` ${item.fontFamily}`, fontSize: `${inputs}px` }}
+          className="textarea"
+          value={text}
           onChange={onChange2}
         >
-          {userInput}
-        </textarea>
+          {TextMessage}
+        </p>
 
         <div className="bold">
           <p>{item.bold}</p>
@@ -122,19 +126,6 @@ export function FontDetail({ items }) {
       alert("복사 실패!");
     }
   };
-  // 위에게 한줄 요약 한거임
-  // for (let i = 0; i < items.length; i++) {
-  //   if (items[i].id === _subString) {
-  //     item = items[i];
-  //     break;
-  //   }
-  // }
-
-  // if (item == null)
-  //   item = {
-  //     id: "0",
-  //     des: "광고 란입니다",
-  //   };
 
   return (
     <div>
@@ -187,7 +178,6 @@ export function FontDetail({ items }) {
             <div className="str">
               <strong>폰트 미리보기</strong>
               <div className="line"></div>
-              {/* <div className="line"></div> */}
               <div className="try">
                 <input
                   className="detailInput"
@@ -216,8 +206,8 @@ export function FontDetail({ items }) {
                   <input
                     onChange={onChange2}
                     type="range"
-                    min="0"
-                    max="100"
+                    min="8"
+                    max="80"
                     value={inputs}
                     className="slider"
                     name="q"
@@ -251,7 +241,7 @@ export function FontDetail({ items }) {
             {arrWeight.map((_item) => (
               <div className="weight">
                 <input
-                  onChange={onChange}
+                  onChange={onChange2}
                   value={text}
                   name="q"
                   placeholder={`${item.des}`}
