@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "./layout/Header";
-import { Route, Routes, Router } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import RecommendFont from "./components/RecommendFont";
 import AllFont from "./components/AllFont";
 

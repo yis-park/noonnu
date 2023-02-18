@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Modal from "./Modal";
 import "./fontDetail.scss";
 import LicenseDes from "./LicenseDes";
@@ -52,6 +52,7 @@ export function FontDetailPreView({ item, txtValue, txtFontSize }) {
             onClick={() => {
               setIsOpen(!isOpen);
             }}
+            ㅈ
           >
             {isOpen ? <Modal /> : null}
 
@@ -85,7 +86,6 @@ export function FontDetail({ items }) {
   console.log(items);
   const [isOpen, setIsOpen] = useState(false);
   const userMenu = useRef();
-  const navigate = useNavigate();
 
   const _path = window.location.href;
   const _lastIndex = _path.lastIndexOf("/");
