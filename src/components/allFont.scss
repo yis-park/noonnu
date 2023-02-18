@@ -2,21 +2,36 @@
 @import "../assets/fonts/font.scss";
 
 .wrapper {
-  .txt {
+  .flex2 {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 1.4rem;
 
-    h3 {
-      font-size: $h3Size;
-      color: $h3Color;
-      font-weight: $h3Weight;
+    .txt {
+      display: flex;
+      align-items: center;
+      margin-top: 2rem;
+      margin-bottom: 1.7rem;
+      // justify-content: ;
+
+      h3 {
+        font-size: $h3Size;
+        color: $h3Color;
+        font-weight: $h3Weight;
+      }
+      p {
+        font-size: 16px;
+        color: #6b7280;
+        margin-left: 1.5rem;
+      }
     }
-    p {
-      font-size: 16px;
-      color: #6b7280;
-      margin-left: 1.5rem;
+    .btn {
+      display: flex;
+      flex-direction: row;
+      color: #000;
+      border-radius: 0.15rem;
+      padding: 10px;
+      background: $Click;
     }
   }
   .input {

@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "./allFont.scss";
 import { FontDetailPreView } from "./FontDetail";
 
@@ -52,9 +52,11 @@ function AllFont({ allData }) {
 
   return (
     <article className="wrapper">
-      <div className="txt">
-        <h3>모든 폰트</h3>
-        <p>상업적으로 사용할 수 있는 모든 폰트들을 만나 보세요</p>
+      <div className="flex2">
+        <div className="txt">
+          <h3>모든 폰트</h3>
+          <p>상업적으로 사용할 수 있는 모든 폰트들을 만나 보세요</p>
+        </div>
       </div>
       <div className="input fixed after">
         <div className="search">

@@ -142,6 +142,11 @@ output.innerHTML = this.value;
   />
   - 검색 기능 handleQueryChange 함수 이용해 구현 (nav에 있는 검색 기능은 다시 시도 해봐야 함)
 
+2/18 진행상황:
+
+- NotFoundPage 꾸미기
+- 제작일지 작성
+
 ### 해야할 것
 
 - 폰트 제목 클릭 시 해당 컴포넌트로 이동시키기 (0)
@@ -149,6 +154,6 @@ output.innerHTML = this.value;
 - 이벤트클릭 된 아이들 영역 밖 클릭시 닫히도록(e.target 사용해야 하는 것 같음,,,!! useRef나) (x) 닫기 버튼 추가로 대체
 - input에 검색시 해당 내용의 폰트 검색되게 (o)
 - 폰트사이즈 변경되는것 (o)
-- https://www.w3schools.com/howto/howto_js_rangeslider.asp 참고해서 트랙바 구현 (o) input으로 해결
+- https://www.w3schools.com/howto/howto_js_rangeslider.asp 참고해서 트랙바 구현 (o) input으로 사이드바 만들기 해결
 - 디스커버리 시도해보기
 - 셀렉트 기능 시도해보기
