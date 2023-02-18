@@ -13,7 +13,7 @@ function RecommendFont({ allData }) {
           <p>눈누가 직접 제안하는 용도별 추천 폰트들을 만나 보세요</p>
         </div>
         <div className="btn">
-          <Link to="/allFont">모든 폰트</Link>
+          <Link to="/allFont">모든 폰트→</Link>
         </div>
       </div>
       <div className="grid">
