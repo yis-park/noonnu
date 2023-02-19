@@ -147,6 +147,10 @@ output.innerHTML = this.value;
 - NotFoundPage 꾸미기
 - 제작일지 작성
 
+2/19 진행상황:
+
+- navigation 검색창 구현 시도
+
 ### 해야할 것
 
 - 폰트 제목 클릭 시 해당 컴포넌트로 이동시키기 (0)
