@@ -122,7 +122,7 @@ output.innerHTML = this.value;
 
 - 문구 입력하는곳 textarea에서 적으면 반영되는데 input에서 적은 값을 받아오지 못함
 - textarea 대신 p 태그로 함수식 써서 시도해보기 해결안됨,,,,,,
-- useContext로 활용해보기 실패,,
+- useContext로 활용해보기 실패,, (전역함수는 되도록 지양하는게 좋음)
 - 참고 사이트 https://velog.io/@velopert/react-context-tutorial
 - 폰트사이즈변경, 예시문구 렌더링 성공 => 함수값 아닌 value값을 넣었어야 했음,,,!
   <textarea
