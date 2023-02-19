@@ -4,7 +4,7 @@ import Navigation from "../components/Navigation";
 
 import "./header.scss";
 
-function Header(props) {
+function Header({ allData }) {
   const headerRef = useRef(null);
   return (
     <header ref={headerRef}>
@@ -29,7 +29,7 @@ function Header(props) {
           </svg>
         </Link>
       </h1>
-      <Navigation />
+      <Navigation _allData={allData} />
     </header>
   );
 }

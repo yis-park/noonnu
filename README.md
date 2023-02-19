@@ -150,6 +150,7 @@ output.innerHTML = this.value;
 2/19 진행상황:
 
 - navigation 검색창 구현 시도
+- 검색창 구현
 
 ### 해야할 것
 

@@ -19,20 +19,21 @@ function Navigation({ _allData }) {
   const [results, setResults] = useState([]);
 
   function handleQueryChange(event) {
-    const { value } = event.target;
-    setQuery(value);
+    const searchValue = event.target.value;
+    setQuery(searchValue);
 
-    if (value.length > 2) {
-      searchFonts(value);
+    if (searchValue.length > 0) {
+      searchFonts(searchValue);
     } else {
       setResults([]);
     }
   }
 
+  // 검색어와 일치하는 폰트 이름을 찾습니다.
   function searchFonts(query) {
-    // 검색어와 일치하는 폰트 이름을 찾습니다.
+    const myFilter = query.toLowerCase();
     const fontNameMatches = _allData.filter((font) =>
-      font.title.toLowerCase().includes(query.toLowerCase())
+      font.title?.toLowerCase().includes(myFilter)
     );
     console.log(fontNameMatches);
     // 검색 결과를 업데이트합니다.
@@ -50,7 +51,13 @@ function Navigation({ _allData }) {
       </ul>
       <ul className="input">
         <li>
-          <input type="search" name="q" placeholder="전체 폰트 검색" />
+          <input
+            type="search"
+            name="q"
+            placeholder="전체 폰트 검색"
+            onChange={handleQueryChange}
+            value={query}
+          />
 
           <svg
             className="h-5 w-5 text-gray-600 dark:text-gray-400 stroke-current"
@@ -67,11 +74,25 @@ function Navigation({ _allData }) {
             <line x1="21" y1="21" x2="15" y2="15"></line>
           </svg>
           {results.length > 0 && (
-            <div>
-              {results.map((font) => (
-                <FontDetailPreView key={font.id} font={font} />
+            <ul className="navSearch">
+              {results.map((_results) => (
+                <li key={_results.id} value={_results}>
+                  <Link
+                    to={`/allFont/${_results.id}`}
+                    className="navSearchFlex"
+                  >
+                    <spapn
+                      style={{
+                        fontFamily: `${_results.fontFamily}`,
+                      }}
+                    >
+                      {_results.title}
+                    </spapn>
+                    <p>{_results.writer}</p>
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           )}
         </li>
       </ul>

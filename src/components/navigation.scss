@@ -34,6 +34,29 @@
       top: 18px;
       right: 180px;
     }
+    .navSearch {
+      position: absolute;
+      top: 58px;
+      background-color: #fff;
+
+      padding-left: 20px;
+      li {
+        border-radius: 3px;
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+      .navSearchFlex {
+        display: flex;
+        padding: 5px;
+        font-size: 16px;
+        color: #000;
+        p {
+          padding: 0 5px;
+          font-size: 14px;
+        }
+      }
+    }
   }
   .icon {
     button {

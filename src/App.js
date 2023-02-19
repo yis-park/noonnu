@@ -28,7 +28,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header allData={_allData} />
       <Routes>
         <Route path="/" element={<RecommendFont allData={_allData} />} />
         <Route path="/allFont">
