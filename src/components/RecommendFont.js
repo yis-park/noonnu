@@ -4,7 +4,7 @@ import "./allFont.scss";
 import { FontDetailPreView } from "./FontDetail";
 
 function RecommendFont({ allData }) {
-  const [slideBarValue, setSlideBarValue] = useState("30");
+  const [slideBarValue] = useState("30");
   return (
     <article className="wrapper">
       <div className="flex2">

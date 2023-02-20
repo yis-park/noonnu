@@ -1,20 +1,19 @@
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./navigation.scss";
 import noonMore from "../assets/images/noon-more.jpg";
 import logImg from "../assets/images/login.png";
 
 import navData from "./navData";
-import { FontDetailPreView } from "./FontDetail";
 
 function Navigation({ _allData }) {
   const [data, setData] = useState(navData);
 
   const [subMenu, setSubMenu] = useState(false);
   const outside = useRef();
-  // 검색
 
+  // 검색
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 

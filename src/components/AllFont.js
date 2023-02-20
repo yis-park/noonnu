@@ -89,6 +89,7 @@ function AllFont({ allData }) {
             placeholder="예시 문구를 적어보세요"
             value={exampleText}
             onChange={onExampleTextChanged}
+            autocomplete="off"
             type="search"
             name="q"
           />

@@ -99,7 +99,7 @@ export function FontDetail({ items }) {
   console.log(arrWeight);
 
   // 사이드바!!
-  const [inputs, setInputs] = useState();
+  const [inputs, setInputs] = useState("30");
   const onChange2 = (e) => {
     setInputs(e.target.value);
   };
